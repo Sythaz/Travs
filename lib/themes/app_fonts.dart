@@ -10,15 +10,9 @@ class AppFonts {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle robotoRegular14 = TextStyle(
+  static const TextStyle robotoMedium20 = TextStyle(
     fontFamily: roboto,
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
-  );
-
-  static const TextStyle robotoMedium14 = TextStyle(
-    fontFamily: roboto,
-    fontSize: 14,
+    fontSize: 20,
     fontWeight: FontWeight.w500,
   );
 
@@ -28,9 +22,9 @@ class AppFonts {
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle robotoMedium20 = TextStyle(
+  static const TextStyle robotoMedium14 = TextStyle(
     fontFamily: roboto,
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
   );
 
@@ -40,15 +34,21 @@ class AppFonts {
     fontWeight: FontWeight.normal,
   );
 
+  static const TextStyle robotoRegular14 = TextStyle(
+    fontFamily: roboto,
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+  );
+
   static const TextStyle robotoRegular10 = TextStyle(
     fontFamily: roboto,
     fontSize: 10,
     fontWeight: FontWeight.normal,
   );
 
-  static const TextStyle montserratBold16 = TextStyle(
+  static const TextStyle montserratBold18 = TextStyle(
     fontFamily: montserrat,
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
   );
 
