@@ -36,14 +36,11 @@ class CDiscover extends GetxController {
           ),
         );
       }
-      // ingin delay 5 detik
+      // To show shimmer loading
       await Future.delayed(const Duration(seconds: 2));
-      // print('Category: ${categories.length}');
-      // print('List Destination: ${_listDestination.length}');
     } catch (e) {
-      // print('Error BANG: $e');
+      print('$e');
     } finally {
-      // print('Segini BANG::: ${_listDestination.value.length}');
       isLoading.value = false;
     }
   }

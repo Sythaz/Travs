@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-
-import 'theme/app_themes.dart';
-import 'views/onboarding_screen.dart';
+import 'package:get/get.dart';
+import 'package:travs/routes/app_page.dart';
+import 'package:travs/views/onboarding_screen.dart';
+import 'themes/app_themes.dart';
 
 void main() {
-    runApp(const MainApp());
+  // debugPaintSizeEnabled = true;
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -12,16 +14,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: Builder(
         builder: (context) {
           return OnBoardingScreen();
         },
       ),
+      getPages: AppPages.pages,
     );
   }
 }

@@ -3,9 +3,10 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../theme/app_assets.dart';
-import '../theme/text_style_helper.dart';
+import 'package:get/get.dart';
+import 'package:travs/routes/app_route.dart';
+import '../themes/app_assets.dart';
+import '../themes/text_style_helper.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({
@@ -64,9 +65,9 @@ class OnBoardingScreen extends StatelessWidget {
             right: 16,
             bottom: 100,
             child: Bounce(
-              duration: const Duration(milliseconds: 100),
-              child: GestureDetector(
-                  child: SvgPicture.asset(AppAssets.onboardingNext)),
+              scaleFactor: 0.8,
+              onTap: () => Get.toNamed(AppRoutes.home),
+              child: SvgPicture.asset(AppAssets.onboardingNextIcon),
             ),
           ),
         ],
