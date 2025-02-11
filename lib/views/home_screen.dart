@@ -1,4 +1,5 @@
 import 'package:animated_hint_textfield/animated_hint_textfield.dart';
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,18 +28,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: customBottomNavigation(),
-      appBar: appBarCustom(context),
-      body: Column(
-        spacing: 10,
-        children: [
-          header(context),
-          searchField(context),
-          category(),
-          sortAndGrid(context),
-          card(),
-        ],
+    return ThemeSwitchingArea(
+      child: Scaffold(
+        bottomNavigationBar: customBottomNavigation(),
+        appBar: appBarCustom(context),
+        body: Column(
+          spacing: 10,
+          children: [
+            header(context),
+            // searchField(context),
+            category(),
+            sortAndGrid(context),
+            card(),
+          ],
+        ),
       ),
     );
   }
@@ -511,28 +514,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
-              InkWell(
-                onTap: () {
-                  cDiscover.switchTheme();
+              ThemeSwitcher(
+                builder: (context) {
+                  return InkWell(
+                    onTap: () {
+                      cDiscover.switchTheme(context);
+                    },
+                    borderRadius: BorderRadius.circular(15),
+                    child: Obx(
+                      () {
+                        return SvgPicture.asset(
+                          cDiscover.isDarkMode.value
+                              ? AppAssets.lightModeIcon
+                              : AppAssets.darkModeIcon,
+                          width: 32,
+                          colorFilter: ColorFilter.mode(
+                            cDiscover.isDarkMode.value
+                                ? AppColors.primaryColor2
+                                : AppColors.primaryColor1,
+                            BlendMode.srcIn,
+                          ),
+                        );
+                      },
+                    ),
+                  );
                 },
-                borderRadius: BorderRadius.circular(15),
-                child: Obx(
-                  () {
-                    return SvgPicture.asset(
-                      cDiscover.isDarkMode.value
-                          ? AppAssets.lightModeIcon
-                          : AppAssets.darkModeIcon,
-                      width: 32,
-                      colorFilter: ColorFilter.mode(
-                        cDiscover.isDarkMode.value
-                            ? AppColors.primaryColor2
-                            : AppColors.primaryColor1,
-                        BlendMode.srcIn,
-                      ),
-                    );
-                  },
-                ),
-              ),
+              )
             ],
           );
         },
