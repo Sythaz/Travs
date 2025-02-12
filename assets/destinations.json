@@ -1,139 +1,155 @@
 [
-    {
-      "name": "Mount Merbabu",
-      "location": "Central Java, Indonesia",
-      "status": "Closed",
-      "category": "Asia",
-      "description": "Mount Merbabu, standing at 3,145 meters above sea level, is a dormant stratovolcano located in Central Java, Indonesia. Known for its lush green landscapes and panoramic vistas, it offers several trekking routes that traverse through dense forests, savannas, and edelweiss fields. The summit provides breathtaking views of neighboring volcanoes, including Merapi, Sumbing, and Sindoro. However, as of October 31, 2024, all hiking trails on Mount Merbabu have been temporarily closed to allow for trail maintenance and ecosystem recovery. The reopening date remains undetermined, and potential visitors are advised to check for updates before planning a trip.",
-      "cover": "https://i.pinimg.com/736x/ae/c7/26/aec7263b6846560117b823188f32e184.jpg"
-    },
-    {
-      "name": "Aurora Borealis",
-      "location": "Norway, Europe",
-      "status": "Open",
-      "category": "Europe",
-      "description": "The Aurora Borealis, or Northern Lights, is a mesmerizing natural phenomenon that illuminates the night sky with vibrant colors, primarily green, pink, and violet. This spectacle is caused by the interaction between solar particles and Earth's magnetic field. Northern Norway, particularly regions above the Arctic Circle like Tromsø and the Lofoten Islands, offers some of the best vantage points to witness this ethereal display. The optimal period to experience the Northern Lights is between late September and early April, during clear, dark nights. Many tour operators provide guided excursions to maximize the chances of a sighting, often combining the experience with cultural insights into the indigenous Sami people.",
-      "cover": "https://i.pinimg.com/736x/b6/0a/db/b60adb4ca8122e83fa561c6b8f58dc75.jpg"
-
-    },
-    {
-      "name": "Machu Picchu",
-      "location": "Peru, South America",
-      "status": "Open",
-      "category": "America",
-      "description": "Perched high in the Andes Mountains, Machu Picchu is a 15th-century Incan citadel that remained hidden from the outside world until its discovery in 1911. This UNESCO World Heritage site showcases the architectural prowess of the Inca civilization, featuring intricately constructed stone terraces, temples, and palaces that seamlessly blend with the surrounding landscape. Visitors can explore the Temple of the Sun, the Room of the Three Windows, and the Intihuatana stone, believed to be an ancient astronomical clock. The site is accessible via the Inca Trail, a multi-day trek that offers a profound sense of accomplishment upon arrival, or by train from Cusco to the town of Aguas Calientes, followed by a bus ride to the entrance.",
-      "cover": "https://i.pinimg.com/736x/df/9d/28/df9d28834b285414dbff2b10d5656e54.jpg"
-    },
-    {
-      "name": "Gunung Bromo",
-      "location": "Jawa Timur, Indonesia",
-      "status": "Buka",
-      "category": "Asia",
-      "description": "Gunung Bromo, terletak di Provinsi Jawa Timur, Indonesia, adalah salah satu gunung berapi paling ikonik di Nusantara. Dengan ketinggian sekitar 2.329 meter di atas permukaan laut, Bromo menawarkan pemandangan alam yang luar biasa, terutama saat matahari terbit. Wisatawan sering mendaki pada dini hari untuk mencapai titik pandang di Penanjakan, di mana mereka dapat menyaksikan panorama matahari terbit yang memukau dengan latar belakang Gunung Semeru yang megah. Kawah Bromo sendiri memiliki diameter sekitar 800 meter, dan dari puncaknya, pengunjung dapat melihat lanskap lautan pasir yang luas, dikenal sebagai 'Segara Wedi'. Selain itu, budaya lokal suku Tengger yang masih kental menambah daya tarik tersendiri bagi para pelancong.",
-      "cover": "https://i.pinimg.com/736x/69/b3/fc/69b3fc05c9a8890fa9029cac39309aaf.jpg"
-    },
-    {
-      "name": "Galápagos Islands",
-      "location": "Ecuador, South America",
-      "status": "Open",
-      "category": "South America",
-      "description": "Situated approximately 1,000 kilometers off the coast of Ecuador, the Galápagos Islands are an archipelago of volcanic islands renowned for their unique biodiversity. The isolation of these islands has led to the evolution of species found nowhere else on Earth, such as the giant tortoise, marine iguana, and blue-footed booby. Declared a UNESCO World Heritage site, the Galápagos serve as a living museum and showcase of evolution. Visitors can engage in guided tours to observe the diverse wildlife, snorkel in crystal-clear waters teeming with marine life, and learn about the conservation efforts aimed at preserving this ecological treasure.",
-      "cover": "https://i.pinimg.com/736x/eb/c4/7f/ebc47f624a34134ff1ba359ebfb0a2fd.jpg"
-    },
-    {
-      "name": "Mount Kilimanjaro",
-      "location": "Tanzania, Africa",
-      "status": "Open",
-      "category": "Africa",
-      "description": "Rising majestically above the plains of Tanzania, Mount Kilimanjaro is Africa's highest peak, standing at 5,895 meters. This dormant volcano comprises three cones: Kibo, Mawenzi, and Shira. The mountain's snow-capped summit and diverse ecosystems, ranging from tropical rainforests to alpine deserts, attract trekkers from around the globe. Several routes, such as the Marangu, Machame, and Lemosho, offer varying levels of difficulty and scenic beauty. Reaching the summit, known as Uhuru Peak, provides a profound sense of achievement and panoramic views that are truly unparalleled.",
-      "cover": "https://i.pinimg.com/736x/84/cf/bd/84cfbdec9ce0d12efcae2fe545a9f463.jpg"
-    },
-    {
-      "name": "Petra",
-      "location": "Yordania",
-      "status": "Open",
-      "category": "Asia",
-      "description": "Carved directly into vibrant red, white, and pink sandstone cliffs, Petra is a historical and archaeological city that served as the capital of the Nabataean Kingdom. Often referred to as the 'Rose City' due to the color of its stone, Petra is accessed via a narrow canyon called the Siq, which opens up to reveal the iconic Treasury (Al-Khazneh). Beyond the Treasury, the site encompasses a vast network of tombs, temples, and an impressive amphitheater. Recognized as a UNESCO World Heritage site, Petra offers a glimpse into ancient engineering marvels and the rich history of the Nabataean civilization.",
-      "cover": "https://i.pinimg.com/736x/95/68/57/9568574bb8d9f8619b66cafc5ca714c8.jpg"
-    },
-    {
-      "name": "Everest Base Camp",
-      "location": "Nepal",
-      "status": "Open",
-      "category": "Asia",
-      "description": "Situated at an altitude of approximately 5,364 meters, Everest Base Camp serves as the starting point for mountaineers aiming to summit the world's highest peak, Mount Everest. The trek to the base camp is a journey through diverse landscapes, including lush forests, Sherpa villages, and high-altitude terrains. Trekkers are treated to panoramic views of towering peaks such as Lhotse, Nuptse, and Ama Dablam. Along the route, visitors can experience the rich culture of the Sherpa people, visit ancient monasteries, and gain insight into the challenges faced by climbers. The journey is both physically demanding and profoundly rewarding, offering a deep connection to the majestic Himalayas.",
-      "cover": "https://i.pinimg.com/736x/53/fc/4a/53fc4a89da81579aeab7748b5fefedae.jpg"
-    },
-    {
-      "name": "Banda Neira",
-      "location": "Maluku, Indonesia",
-      "status": "Buka",
-      "category": "Asia",
-      "description": "Banda Neira adalah salah satu pulau utama di Kepulauan Banda, Maluku, Indonesia. Pulau ini memiliki sejarah panjang sebagai pusat perdagangan rempah-rempah, terutama pala dan fuli, pada masa kolonial. Benteng Belgica, yang dibangun oleh Belanda pada abad ke-17, masih berdiri kokoh sebagai saksi bisu masa lalu yang kaya. Selain nilai sejarahnya, Banda Neira menawarkan keindahan alam yang luar biasa, dengan perairan yang jernih dan terumbu karang yang masih terjaga, menjadikannya destinasi ideal untuk snorkeling dan diving. Kombinasi antara warisan budaya dan keindahan alam membuat Banda Neira menjadi tujuan wisata yang unik dan menarik.",
-      "cover": "https://i.pinimg.com/736x/1d/3a/7d/1d3a7dba447fbc45c1ce34b35c2d59c7.jpg"
-    },
-    {
-      "name": "African Safari",
-      "location": "Kenya",
-      "status": "Open",
-      "category": "Africa",
-      "description": "Kenya's vast savannas and diverse ecosystems make it a premier destination for wildlife enthusiasts seeking an authentic African safari experience. The Maasai Mara National Reserve, in particular, is renowned for its annual Great Migration, where millions of wildebeest, zebras, and gazelles traverse the plains in search of fresh grazing grounds. Visitors can embark on game drives to witness the 'Big Five'—lion, elephant, buffalo, leopard, and rhinoceros—in their natural habitats. Cultural interactions with the Maasai people provide additional insights into the region's rich heritage.",
-      "cover": "https://i.pinimg.com/736x/a3/47/7d/a3477d044ab988626f2c3d8993f0f169.jpg"
-    },
-    {
-      "name": "The Great Barrier Reef",
-      "location": "Queensland, Australia",
-      "status": "Open",
-      "category": "Australia",
-      "description": "The Great Barrier Reef is the world's largest coral reef system, spanning over 2,300 kilometers along the northeastern coast of Australia. This UNESCO World Heritage site is home to an astonishing diversity of marine life, including over 1,500 species of fish, sea turtles, dolphins, and colorful coral formations. Visitors can explore the reef through snorkeling, scuba diving, and underwater observatories. Conservation efforts are in place to protect this natural wonder from climate change and human impact.",
-      "cover": "https://i.pinimg.com/736x/78/b8/c2/78b8c2abdc103bd8aba3b95f8ba9b39f.jpg"
-    },
-    {
-      "name": "Santorini",
-      "location": "Greece",
-      "status": "Open",
-      "category": "Europe",
-      "description": "Santorini is a breathtaking island in the Aegean Sea, famous for its white-washed buildings with blue domes, dramatic caldera views, and stunning sunsets. Formed by a volcanic eruption, the island's unique landscape includes steep cliffs, black sand beaches, and charming villages such as Oia and Fira. Tourists can enjoy local Greek cuisine, explore ancient ruins, and relax in luxurious cliffside resorts.",
-      "cover": "https://i.pinimg.com/736x/16/f9/05/16f9050e154bb6c3f7ebc4a8aae26619.jpg"
-    },
-    {
-      "name": "Taj Mahal",
-      "location": "Agra, India",
-      "status": "Open",
-      "category": "Asia",
-      "description": "The Taj Mahal, a symbol of eternal love, is an architectural masterpiece built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal. This UNESCO World Heritage site is made of white marble and adorned with intricate carvings, reflecting pools, and lush gardens. It attracts millions of visitors annually, who come to admire its beauty, symmetry, and historical significance.",
-      "cover": "https://i.pinimg.com/736x/9d/1f/5d/9d1f5dca58dad07c2402be6ec9128808.jpg"
-    },
-    {
-      "name": "Grand Canyon",
-      "location": "Arizona, USA",
-      "status": "Open",
-      "category": "America",
-      "description": "The Grand Canyon is one of the most awe-inspiring natural wonders in the world, carved by the Colorado River over millions of years. Stretching 446 kilometers long and up to 1,857 meters deep, it offers breathtaking vistas of layered red rock formations. Visitors can explore the canyon through hiking trails, rafting trips, and scenic viewpoints such as the South Rim and Skywalk.",
-      "cover": "https://i.pinimg.com/736x/6d/02/fa/6d02fa679a4db9bd7193d17d3982d73b.jpg"
-    },
-    {
-      "name": "Venice",
-      "location": "Italy",
-      "status": "Open",
-      "category": "Europe",
-      "description": "Venice, often called the 'City of Canals,' is a unique and romantic destination built on a network of over 100 islands connected by bridges and canals. Iconic attractions include St. Mark's Basilica, the Grand Canal, and the Rialto Bridge. Gondola rides through the waterways provide a quintessential Venetian experience, while the city's rich history, art, and cuisine make it a cultural treasure.",
-      "cover": "https://i.pinimg.com/736x/95/4c/0e/954c0ebcec430b2ac85ed34f25c8a274.jpg"
-    },
-    {
-      "name": "Banff National Park",
-      "location": "Alberta, Canada",
-      "status": "Open",
-      "category": "America",
-      "description": "Banff National Park, Canada's first national park, is a stunning wilderness destination known for its majestic Rocky Mountain peaks, turquoise glacial lakes, and diverse wildlife. Popular attractions include Lake Louise, Moraine Lake, and the Icefields Parkway. Outdoor activities such as hiking, skiing, and wildlife spotting make it a paradise for nature lovers.",
-      "cover": "https://i.pinimg.com/736x/12/26/9d/12269dd8fdc115ef3d1b28af8d9cc695.jpg"
-    },
-    {
-      "name": "Sydney Opera House",
-      "location": "Sydney, Australia",
-      "status": "Open",
-      "category": "Australia",
-      "description": "The Sydney Opera House is a globally recognized architectural masterpiece and a UNESCO World Heritage site. Located on the picturesque Sydney Harbour, it hosts world-class performances, including opera, ballet, theater, and concerts. Visitors can take guided tours to learn about its history, design, and cultural significance while enjoying stunning waterfront views.",
-      "cover": "https://i.pinimg.com/736x/87/da/97/87da97d359d2179d466d60ae7edf0cd6.jpg"
-    }
-  ]
+  {
+    "name": "Mount Merbabu",
+    "location": "Central Java, Indonesia",
+    "status": "Closed",
+    "category": "Asia",
+    "rating": 4.5,
+    "description": "Mount Merbabu, standing at 3,145 meters above sea level, is a dormant stratovolcano located in Central Java, Indonesia.\nKnown for its lush green landscapes and panoramic vistas, it offers several trekking routes that traverse through dense forests, savannas, and edelweiss fields.\nThe summit provides breathtaking views of neighboring volcanoes, including Merapi, Sumbing, and Sindoro.\nHowever, as of October 31, 2024, all hiking trails on Mount Merbabu have been temporarily closed to allow for trail maintenance and ecosystem recovery.\nThe reopening date remains undetermined, and potential visitors are advised to check for updates before planning a trip.",
+    "cover": "https://i.pinimg.com/736x/ae/c7/26/aec7263b6846560117b823188f32e184.jpg"
+  },
+  {
+    "name": "Aurora Borealis",
+    "location": "Norway, Europe",
+    "status": "Open",
+    "category": "Europe",
+    "rating": 4.8,
+    "description": "The Aurora Borealis, or Northern Lights, is a mesmerizing natural phenomenon that illuminates the night sky with vibrant colors, primarily green, pink, and violet.\nThis spectacle is caused by the interaction between solar particles and Earth's magnetic field.\nNorthern Norway, particularly regions above the Arctic Circle like Tromsø and the Lofoten Islands, offers some of the best vantage points to witness this ethereal display.\nThe optimal period to experience the Northern Lights is between late September and early April, during clear, dark nights.\nMany tour operators provide guided excursions to maximize the chances of a sighting, often combining the experience with cultural insights into the indigenous Sami people.",
+    "cover": "https://i.pinimg.com/736x/b6/0a/db/b60adb4ca8122e83fa561c6b8f58dc75.jpg"
+  },
+  {
+    "name": "Machu Picchu",
+    "location": "Peru, South America",
+    "status": "Open",
+    "category": "America",
+    "rating": 4.7,
+    "description": "Perched high in the Andes Mountains, Machu Picchu is a 15th-century Incan citadel that remained hidden from the outside world until its discovery in 1911.\nThis UNESCO World Heritage site showcases the architectural prowess of the Inca civilization, featuring intricately constructed stone terraces, temples, and palaces that seamlessly blend with the surrounding landscape.\nVisitors can explore the Temple of the Sun, the Room of the Three Windows, and the Intihuatana stone, believed to be an ancient astronomical clock.\nThe site is accessible via the Inca Trail, a multi-day trek that offers a profound sense of accomplishment upon arrival, or by train from Cusco to the town of Aguas Calientes, followed by a bus ride to the entrance.",
+    "cover": "https://i.pinimg.com/736x/df/9d/28/df9d28834b285414dbff2b10d5656e54.jpg"
+  },
+  {
+    "name": "Gunung Bromo",
+    "location": "Jawa Timur, Indonesia",
+    "status": "Buka",
+    "category": "Asia",
+    "rating": 4.6,
+    "description": "Gunung Bromo, terletak di Provinsi Jawa Timur, Indonesia, adalah salah satu gunung berapi paling ikonik di Nusantara.\nDengan ketinggian sekitar 2.329 meter di atas permukaan laut, Bromo menawarkan pemandangan alam yang luar biasa, terutama saat matahari terbit.\nWisatawan sering mendaki pada dini hari untuk mencapai titik pandang di Penanjakan, di mana mereka dapat menyaksikan panorama matahari terbit yang memukau dengan latar belakang Gunung Semeru yang megah.\nKawah Bromo sendiri memiliki diameter sekitar 800 meter, dan dari puncaknya, pengunjung dapat melihat lanskap lautan pasir yang luas, dikenal sebagai 'Segara Wedi'.\nSelain itu, budaya lokal suku Tengger yang masih kental menambah daya tarik tersendiri bagi para pelancong.",
+    "cover": "https://i.pinimg.com/736x/69/b3/fc/69b3fc05c9a8890fa9029cac39309aaf.jpg"
+  },
+  {
+    "name": "Galápagos Islands",
+    "location": "Ecuador, South America",
+    "status": "Open",
+    "category": "South America",
+    "rating": 4.9,
+    "description": "Situated approximately 1,000 kilometers off the coast of Ecuador, the Galápagos Islands are an archipelago of volcanic islands renowned for their unique biodiversity.\nThe isolation of these islands has led to the evolution of species found nowhere else on Earth, such as the giant tortoise, marine iguana, and blue-footed booby.\nDeclared a UNESCO World Heritage site, the Galápagos serve as a living museum and showcase of evolution.\nVisitors can engage in guided tours to observe the diverse wildlife, snorkel in crystal-clear waters teeming with marine life, and learn about the conservation efforts aimed at preserving this ecological treasure.",
+    "cover": "https://i.pinimg.com/736x/eb/c4/7f/ebc47f624a34134ff1ba359ebfb0a2fd.jpg"
+  },
+  {
+    "name": "Mount Kilimanjaro",
+    "location": "Tanzania, Africa",
+    "status": "Open",
+    "category": "Africa",
+    "rating": 4.7,
+    "description": "Rising majestically above the plains of Tanzania, Mount Kilimanjaro is Africa's highest peak, standing at 5,895 meters.\nThis dormant volcano comprises three cones: Kibo, Mawenzi, and Shira.\nThe mountain's snow-capped summit and diverse ecosystems, ranging from tropical rainforests to alpine deserts, attract trekkers from around the globe.\nSeveral routes, such as the Marangu, Machame, and Lemosho, offer varying levels of difficulty and scenic beauty.\nReaching the summit, known as Uhuru Peak, provides a profound sense of achievement and panoramic views that are truly unparalleled.",
+    "cover": "https://i.pinimg.com/736x/84/cf/bd/84cfbdec9ce0d12efcae2fe545a9f463.jpg"
+  },
+  {
+    "name": "Petra",
+    "location": "Yordania",
+    "status": "Open",
+    "category": "Asia",
+    "rating": 4.8,
+    "description": "Carved directly into vibrant red, white, and pink sandstone cliffs, Petra is a historical and archaeological city that served as the capital of the Nabataean Kingdom.\nOften referred to as the 'Rose City' due to the color of its stone, Petra is accessed via a narrow canyon called the Siq, which opens up to reveal the iconic Treasury (Al-Khazneh).\nBeyond the Treasury, the site encompasses a vast network of tombs, temples, and an impressive amphitheater.\nRecognized as a UNESCO World Heritage site, Petra offers a glimpse into ancient engineering marvels and the rich history of the Nabataean civilization.",
+    "cover": "https://i.pinimg.com/736x/95/68/57/9568574bb8d9f8619b66cafc5ca714c8.jpg"
+  },
+  {
+    "name": "Everest Base Camp",
+    "location": "Nepal",
+    "status": "Open",
+    "category": "Asia",
+    "rating": 4.6,
+    "description": "Situated at an altitude of approximately 5,364 meters, Everest Base Camp serves as the starting point for mountaineers aiming to summit the world's highest peak, Mount Everest.\nThe trek to the base camp is a journey through diverse landscapes, including lush forests, Sherpa villages, and high-altitude terrains.\nTrekkers are treated to panoramic views of towering peaks such as Lhotse, Nuptse, and Ama Dablam.\nAlong the route, visitors can experience the rich culture of the Sherpa people, visit ancient monasteries, and gain insight into the challenges faced by climbers.\nThe journey is both physically demanding and profoundly rewarding, offering a deep connection to the majestic Himalayas.",
+    "cover": "https://i.pinimg.com/736x/53/fc/4a/53fc4a89da81579aeab7748b5fefedae.jpg"
+  },
+  {
+    "name": "Banda Neira",
+    "location": "Maluku, Indonesia",
+    "status": "Buka",
+    "category": "Asia",
+    "rating": 4.5,
+    "description": "Banda Neira adalah salah satu pulau utama di Kepulauan Banda, Maluku, Indonesia.\nPulau ini memiliki sejarah panjang sebagai pusat perdagangan rempah-rempah, terutama pala dan fuli, pada masa kolonial.\nBenteng Belgica, yang dibangun oleh Belanda pada abad ke-17, masih berdiri kokoh sebagai saksi bisu masa lalu yang kaya.\nSelain nilai sejarahnya, Banda Neira menawarkan keindahan alam yang luar biasa, dengan perairan yang jernih dan terumbu karang yang masih terjaga, menjadikannya destinasi ideal untuk snorkeling dan diving.\nKombinasi antara warisan budaya dan keindahan alam membuat Banda Neira menjadi tujuan wisata yang unik dan menarik.",
+    "cover": "https://i.pinimg.com/736x/1d/3a/7d/1d3a7dba447fbc45c1ce34b35c2d59c7.jpg"
+  },
+  {
+    "name": "African Safari",
+    "location": "Kenya",
+    "status": "Open",
+    "category": "Africa",
+    "rating": 4.7,
+    "description": "Kenya's vast savannas and diverse ecosystems make it a premier destination for wildlife enthusiasts seeking an authentic African safari experience.\nThe Maasai Mara National Reserve, in particular, is renowned for its annual Great Migration, where millions of wildebeest, zebras, and gazelles traverse the plains in search of fresh grazing grounds.\nVisitors can embark on game drives to witness the 'Big Five'—lion, elephant, buffalo, leopard, and rhinoceros—in their natural habitats.\nCultural interactions with the Maasai people provide additional insights into the region's rich heritage.",
+    "cover": "https://i.pinimg.com/736x/a3/47/7d/a3477d044ab988626f2c3d8993f0f169.jpg"
+  },
+  {
+    "name": "The Great Barrier Reef",
+    "location": "Queensland, Australia",
+    "status": "Open",
+    "category": "Australia",
+    "rating": 4.9,
+    "description": "The Great Barrier Reef is the world's largest coral reef system, spanning over 2,300 kilometers along the northeastern coast of Australia.\nThis UNESCO World Heritage site is home to an astonishing diversity of marine life, including over 1,500 species of fish, sea turtles, dolphins, and colorful coral formations.\nVisitors can explore the reef through snorkeling, scuba diving, and underwater observatories.\nConservation efforts are in place to protect this natural wonder from climate change and human impact.",
+    "cover": "https://i.pinimg.com/736x/78/b8/c2/78b8c2abdc103bd8aba3b95f8ba9b39f.jpg"
+  },
+  {
+    "name": "Santorini",
+    "location": "Greece",
+    "status": "Open",
+    "category": "Europe",
+    "rating": 4.8,
+    "description": "Santorini is a breathtaking island in the Aegean Sea, famous for its white-washed buildings with blue domes, dramatic caldera views, and stunning sunsets.\nFormed by a volcanic eruption, the island's unique landscape includes steep cliffs, black sand beaches, and charming villages such as Oia and Fira.\nTourists can enjoy local Greek cuisine, explore ancient ruins, and relax in luxurious cliffside resorts.",
+    "cover": "https://i.pinimg.com/736x/16/f9/05/16f9050e154bb6c3f7ebc4a8aae26619.jpg"
+  },
+  {
+    "name": "Taj Mahal",
+    "location": "Agra, India",
+    "status": "Open",
+    "category": "Asia",
+    "rating": 4.7,
+    "description": "The Taj Mahal, a symbol of eternal love, is an architectural masterpiece built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal.\nThis UNESCO World Heritage site is made of white marble and adorned with intricate carvings, reflecting pools, and lush gardens.\nIt attracts millions of visitors annually, who come to admire its beauty, symmetry, and historical significance.",
+    "cover": "https://i.pinimg.com/736x/9d/1f/5d/9d1f5dca58dad07c2402be6ec9128808.jpg"
+  },
+  {
+    "name": "Grand Canyon",
+    "location": "Arizona, USA",
+    "status": "Open",
+    "category": "America",
+    "rating": 4.6,
+    "description": "The Grand Canyon is one of the most awe-inspiring natural wonders in the world, carved by the Colorado River over millions of years.\nStretching 446 kilometers long and up to 1,857 meters deep, it offers breathtaking vistas of layered red rock formations.\nVisitors can explore the canyon through hiking trails, rafting trips, and scenic viewpoints such as the South Rim and Skywalk.",
+    "cover": "https://i.pinimg.com/736x/6d/02/fa/6d02fa679a4db9bd7193d17d3982d73b.jpg"
+  },
+  {
+    "name": "Venice",
+    "location": "Italy",
+    "status": "Open",
+    "category": "Europe",
+    "rating": 4.7,
+    "description": "Venice, often called the 'City of Canals,' is a unique and romantic destination built on a network of over 100 islands connected by bridges and canals.\nIconic attractions include St. Mark's Basilica, the Grand Canal, and the Rialto Bridge.\nGondola rides through the waterways provide a quintessential Venetian experience, while the city's rich history, art, and cuisine make it a cultural treasure.",
+    "cover": "https://i.pinimg.com/736x/95/4c/0e/954c0ebcec430b2ac85ed34f25c8a274.jpg"
+  },
+  {
+    "name": "Banff National Park",
+    "location": "Alberta, Canada",
+    "status": "Open",
+    "category": "America",
+    "rating": 4.8,
+    "description": "Banff National Park, Canada's first national park, is a stunning wilderness destination known for its majestic Rocky Mountain peaks, turquoise glacial lakes, and diverse wildlife.\nPopular attractions include Lake Louise, Moraine Lake, and the Icefields Parkway.\nOutdoor activities such as hiking, skiing, and wildlife spotting make it a paradise for nature lovers.",
+    "cover": "https://i.pinimg.com/736x/12/26/9d/12269dd8fdc115ef3d1b28af8d9cc695.jpg"
+  },
+  {
+    "name": "Sydney Opera House",
+    "location": "Sydney, Australia",
+    "status": "Open",
+    "category": "Australia",
+    "rating": 4.7,
+    "description": "The Sydney Opera House is a globally recognized architectural masterpiece and a UNESCO World Heritage site.\nLocated on the picturesque Sydney Harbour, it hosts world-class performances, including opera, ballet, theater, and concerts.\nVisitors can take guided tours to learn about its history, design, and cultural significance while enjoying stunning waterfront views.",
+    "cover": "https://i.pinimg.com/736x/87/da/97/87da97d359d2179d466d60ae7edf0cd6.jpg"
+  }
+]

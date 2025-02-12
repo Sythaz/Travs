@@ -5,6 +5,7 @@ class Destination {
   String? location;
   String? status;
   String? category;
+  double? rating;
   String? description;
   String? cover;
 
@@ -13,6 +14,7 @@ class Destination {
       this.location,
       this.status,
       this.category,
+      this.rating,
       this.description,
       this.cover});
 
@@ -21,6 +23,7 @@ class Destination {
     location = json['location'];
     status = json['status'];
     category = json['category'];
+    rating = json['rating'];
     description = json['description'];
     cover = json['cover'];
   }
@@ -31,6 +34,7 @@ class Destination {
     data['location'] = location;
     data['status'] = status;
     data['category'] = category;
+    data['rating'] = rating;
     data['description'] = description;
     data['cover'] = cover;
     return data;
