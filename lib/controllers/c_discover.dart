@@ -32,9 +32,7 @@ class CDiscover extends GetxController {
       for (var i = 0; i < _listDestination.length; i++) {
         cards.add(
           Cards(
-            title: getListDestination[i].name,
-            location: getListDestination[i].location,
-            cover: getListDestination[i].cover,
+            data: getListDestination[i],
           ),
         );
       }

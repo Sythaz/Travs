@@ -1,16 +1,20 @@
+import 'dart:ui';
+
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travs/routes/app_page.dart';
-import 'package:travs/views/onboarding_screen.dart';
+import 'package:travs/views/home_screen.dart';
 import 'themes/app_themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // debugPaintSizeEnabled = true;
   final isPlatformDark =
-      WidgetsBinding.instance.window.platformBrightness == Brightness.dark;
+      PlatformDispatcher.instance.platformBrightness == Brightness.dark;
+
   final initTheme = isPlatformDark ? AppTheme.darkTheme : AppTheme.lightTheme;
+
   runApp(
     ThemeProvider(
       initTheme: initTheme,
@@ -33,7 +37,7 @@ class MainApp extends StatelessWidget {
       theme: themeKu,
       home: Builder(
         builder: (context) {
-          return OnBoardingScreen();
+          return HomeScreen();
         },
       ),
       getPages: AppPages.pages,

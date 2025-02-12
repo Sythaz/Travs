@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:travs/controllers/c_discover.dart';
+import 'package:travs/views/widgets/custom_bottom_navigation.dart';
 import '../themes/app_assets.dart';
 import '../themes/app_colors.dart';
 import '../themes/text_style_helper.dart';
@@ -30,7 +31,36 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return ThemeSwitchingArea(
       child: Scaffold(
-        bottomNavigationBar: customBottomNavigation(),
+        bottomNavigationBar: customBottomNavigation(
+          context,
+          Theme.of(context).colorScheme.surface,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  AppAssets.homeIcon,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.primary, BlendMode.srcIn),
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.notifications_none_rounded, size: 32),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.bookmark_border_rounded, size: 32),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.person_outline_rounded, size: 32),
+              ),
+            ],
+          ),
+        ),
         appBar: appBarCustom(context),
         body: Column(
           spacing: 10,
@@ -124,52 +154,52 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Container customBottomNavigation() {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(35),
-        color: Theme.of(context).colorScheme.surface,
-        boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
-            // AppColors.primaryColor1.withValues(alpha: 0.2),
-            spreadRadius: 15,
-            blurRadius: 20,
-            offset: Offset(0, 20),
-          ),
-        ],
-      ),
-      height: 70,
-      margin: EdgeInsets.all(16),
-      // width: 10,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              AppAssets.homeIcon,
-              width: 24,
-              colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.primary, BlendMode.srcIn),
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.notifications_none_rounded, size: 32),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.bookmark_border_rounded, size: 32),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.person_outline_rounded, size: 32),
-          ),
-        ],
-      ),
-    );
-  }
+  // Container customBottomNavigation() {
+  //   return Container(
+  //     decoration: BoxDecoration(
+  //       borderRadius: BorderRadius.circular(35),
+  //       color: Theme.of(context).colorScheme.surface,
+  //       boxShadow: [
+  //         BoxShadow(
+  //           color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
+  //           // AppColors.primaryColor1.withValues(alpha: 0.2),
+  //           spreadRadius: 15,
+  //           blurRadius: 20,
+  //           offset: Offset(0, 20),
+  //         ),
+  //       ],
+  //     ),
+  //     height: 70,
+  //     margin: EdgeInsets.all(16),
+  //     // width: 10,
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //       children: [
+  //         IconButton(
+  //           onPressed: () {},
+  //           icon: SvgPicture.asset(
+  //             AppAssets.homeIcon,
+  //             width: 24,
+  //             colorFilter: ColorFilter.mode(
+  //                 Theme.of(context).colorScheme.primary, BlendMode.srcIn),
+  //           ),
+  //         ),
+  //         IconButton(
+  //           onPressed: () {},
+  //           icon: Icon(Icons.notifications_none_rounded, size: 32),
+  //         ),
+  //         IconButton(
+  //           onPressed: () {},
+  //           icon: Icon(Icons.bookmark_border_rounded, size: 32),
+  //         ),
+  //         IconButton(
+  //           onPressed: () {},
+  //           icon: Icon(Icons.person_outline_rounded, size: 32),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   Obx card() {
     return Obx(

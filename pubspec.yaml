@@ -17,6 +17,7 @@ dependencies:
   flutter_card_swiper: ^7.0.2
   flutter_svg: ^2.0.17
   get: ^4.6.6
+  readmore: ^3.0.0
   shimmer: ^3.0.0
 
 dev_dependencies:
