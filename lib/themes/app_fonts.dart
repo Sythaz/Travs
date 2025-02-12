@@ -28,12 +28,6 @@ class AppFonts {
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle robotoRegular16 = TextStyle(
-    fontFamily: roboto,
-    fontSize: 16,
-    fontWeight: FontWeight.normal,
-  );
-
   static const TextStyle robotoRegular14 = TextStyle(
     fontFamily: roboto,
     fontSize: 14,

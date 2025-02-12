@@ -16,11 +16,11 @@ class TextStyleHelper {
         return textTheme.headlineLarge;
       case 'rMedium20':
         return textTheme.titleLarge;
-      case 'rMedium16':
+      case 'rMedium16Location':
         return textTheme.titleMedium;
       case 'rMedium16Name':
         return textTheme.titleSmall;
-      case 'rRegular16':
+      case 'rMedium16':
         return textTheme.bodyLarge;
       case 'rRegular14':
         return textTheme.bodyMedium;
