@@ -9,14 +9,19 @@ import '../views/widgets/cards.dart';
 
 class CDiscover extends GetxController {
   var isLoading = false.obs;
-  final categories = [].obs;
-  final _listDestination = <Destination>[].obs;
   final isDarkMode = false.obs;
   final isGrid = false.obs;
+  final isAscending = true.obs;
 
-  List<Destination> get getListDestination => _listDestination;
+  final categories = [].obs;
+  final category = 'All Place'.obs;
 
-  List<Widget> cards = [];
+  final _listDestination = <Destination>[].obs;
+  final _filteredListDestination = <Destination>[].obs;
+  List<Destination> get getListDestination => _filteredListDestination;
+
+  final _cards = [].obs;
+  get getListCards => _cards;
 
   getDataDestination() async {
     try {
@@ -26,17 +31,11 @@ class CDiscover extends GetxController {
 
       var categoriesInData =
           _listDestination.map((e) => e.category).toSet().toList();
-
       categories.value = ['All Place', ...categoriesInData];
 
-      cards.clear();
-      for (var i = 0; i < _listDestination.length; i++) {
-        cards.add(
-          Cards(
-            data: getListDestination[i],
-          ),
-        );
-      }
+      _applyFilters();
+      updateCards();
+
       // To show shimmer loading
       await Future.delayed(const Duration(seconds: 2));
     } catch (e) {
@@ -53,5 +52,64 @@ class CDiscover extends GetxController {
     ThemeSwitcher.of(context).changeTheme(
       theme: newTheme,
     );
+  }
+
+  void updateCards() {
+    _cards.assignAll(
+      _filteredListDestination
+          .map((destination) => Cards(data: destination))
+          .toList(),
+    );
+  }
+
+  _applyFilters({String searchQuery = '', String newCategory = ''}) {
+    List<Destination> tempList = _listDestination;
+
+    if (searchQuery.isNotEmpty) {
+      tempList = tempList
+          .where((destination) => destination.name!
+              .toLowerCase()
+              .contains(searchQuery.toLowerCase()))
+          .toList();
+    }
+
+    if (category.value != 'All Place') {
+      tempList = tempList
+          .where((destination) => destination.category!
+              .toLowerCase()
+              .contains(category.value.toLowerCase()))
+          .toList();
+    }
+
+    _filteredListDestination.value = tempList;
+
+    updateCards();
+  }
+
+  sortCategory(String newCategory) {
+    category.value = newCategory;
+    _applyFilters(newCategory: newCategory);
+
+    updateCards();
+  }
+
+  sortDestination() {
+    isAscending.value = !isAscending.value;
+
+    _filteredListDestination.sort(
+      (a, b) {
+        final firstName = a.name?.toLowerCase();
+        final secondName = b.name?.toLowerCase();
+        return isAscending.value
+            ? firstName!.compareTo(secondName!)
+            : secondName!.compareTo(firstName!);
+      },
+    );
+
+    updateCards();
+  }
+
+  searchDestination(String query) {
+    _applyFilters(searchQuery: query);
   }
 }
