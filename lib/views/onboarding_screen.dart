@@ -31,7 +31,10 @@ class OnBoardingScreen extends StatelessWidget {
                   TypewriterAnimatedText(
                     "TRAVS",
                     speed: const Duration(milliseconds: 300),
-                    textStyle: Theme.of(context).textTheme.displayLarge,
+                    textStyle: TextStyleHelper.getTextStyle(
+                      context,
+                      'mExtraBold64',
+                    ),
                     textAlign: TextAlign.start,
                   ),
                 ],

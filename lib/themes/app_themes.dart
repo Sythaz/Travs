@@ -85,7 +85,7 @@ class AppTextStyleLight {
   static TextStyle rMedium14Sort =
       AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor1);
   static TextStyle rRegular10 =
-      AppFonts.robotoRegular10.copyWith(color: AppColors.primaryColor1);
+      AppFonts.robotoRegular10.copyWith(color: AppColors.lightGreyColor);
 }
 
 class AppTextStyleDark {
@@ -114,5 +114,5 @@ class AppTextStyleDark {
   static TextStyle rMedium14Sort =
       AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor2);
   static TextStyle rRegular10 =
-      AppFonts.robotoRegular10.copyWith(color: AppColors.primaryColor2);
+      AppFonts.robotoRegular10.copyWith(color: AppColors.lightGreyColor);
 }

@@ -12,6 +12,7 @@ class CDiscover extends GetxController {
   final categories = [].obs;
   final _listDestination = <Destination>[].obs;
   final isDarkMode = false.obs;
+  final isGrid = false.obs;
 
   List<Destination> get getListDestination => _listDestination;
 

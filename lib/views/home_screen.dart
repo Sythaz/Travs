@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:travs/controllers/c_discover.dart';
 import 'package:travs/views/widgets/custom_bottom_navigation.dart';
+import '../routes/app_route.dart';
 import '../themes/app_assets.dart';
 import '../themes/app_colors.dart';
 import '../themes/text_style_helper.dart';
@@ -66,11 +67,109 @@ class _HomeScreenState extends State<HomeScreen> {
           spacing: 10,
           children: [
             header(context),
-            // searchField(context),
+            searchField(context),
             category(),
             sortAndGrid(context),
-            card(),
+            Obx(
+              () {
+                if (cDiscover.isGrid.value) {
+                  return gridContent();
+                }
+                return cardContent();
+              },
+            ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Expanded gridContent() {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: GridView.builder(
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+          ),
+          itemCount: cDiscover.getListDestination.length,
+          itemBuilder: (context, index) {
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: InkWell(
+                splashFactory: NoSplash.splashFactory,
+                onTap: () {
+                  Get.toNamed(
+                    AppRoutes.detailScreen,
+                    arguments: cDiscover.getListDestination[index],
+                  );
+                },
+                child: Stack(
+                  fit: StackFit.expand,
+                  alignment: Alignment.center,
+                  children: [
+                    Image.network(
+                      cDiscover.getListDestination[index].cover!,
+                      fit: BoxFit.cover,
+                    ),
+                    Align(
+                      alignment: Alignment(0.85, -0.9),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: .5),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        height: 30,
+                        width: 30,
+                        child: const Icon(
+                          Icons.bookmark_add_outlined,
+                          color: AppColors.whiteColor,
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment(0, 1),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.black.withValues(alpha: .5),
+                        ),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        height: 70,
+                        width: double.infinity,
+                        child: Column(
+                          // spacing: 5,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              cDiscover.getListDestination[index].name!,
+                              style: TextStyleHelper.getTextStyle(
+                                  context, 'rMedium16Name'),
+                            ),
+                            Row(
+                              spacing: 3,
+                              children: [
+                                Icon(Icons.location_on_outlined, size: 15),
+                                Text(
+                                  cDiscover.getListDestination[index].location!,
+                                  style: TextStyleHelper.getTextStyle(
+                                      context, 'rRegular10'),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );
@@ -154,54 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // Container customBottomNavigation() {
-  //   return Container(
-  //     decoration: BoxDecoration(
-  //       borderRadius: BorderRadius.circular(35),
-  //       color: Theme.of(context).colorScheme.surface,
-  //       boxShadow: [
-  //         BoxShadow(
-  //           color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
-  //           // AppColors.primaryColor1.withValues(alpha: 0.2),
-  //           spreadRadius: 15,
-  //           blurRadius: 20,
-  //           offset: Offset(0, 20),
-  //         ),
-  //       ],
-  //     ),
-  //     height: 70,
-  //     margin: EdgeInsets.all(16),
-  //     // width: 10,
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-  //       children: [
-  //         IconButton(
-  //           onPressed: () {},
-  //           icon: SvgPicture.asset(
-  //             AppAssets.homeIcon,
-  //             width: 24,
-  //             colorFilter: ColorFilter.mode(
-  //                 Theme.of(context).colorScheme.primary, BlendMode.srcIn),
-  //           ),
-  //         ),
-  //         IconButton(
-  //           onPressed: () {},
-  //           icon: Icon(Icons.notifications_none_rounded, size: 32),
-  //         ),
-  //         IconButton(
-  //           onPressed: () {},
-  //           icon: Icon(Icons.bookmark_border_rounded, size: 32),
-  //         ),
-  //         IconButton(
-  //           onPressed: () {},
-  //           icon: Icon(Icons.person_outline_rounded, size: 32),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  Obx card() {
+  Obx cardContent() {
     return Obx(
       () {
         if (cDiscover.isLoading.value) {
@@ -317,10 +369,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.grid_view_outlined,
-                  color: Theme.of(context).colorScheme.primary,
+                borderRadius: BorderRadius.circular(15),
+                onTap: () {
+                  cDiscover.isGrid.value = !cDiscover.isGrid.value;
+                },
+                child: Obx(
+                  () {
+                    if (cDiscover.isGrid.value) {
+                      return Icon(
+                        Icons.web_stories_outlined,
+                        color: Theme.of(context).colorScheme.primary,
+                      );
+                    }
+                    return Icon(
+                      Icons.grid_view_outlined,
+                      color: Theme.of(context).colorScheme.primary,
+                    );
+                  },
                 ),
               ),
             ],
