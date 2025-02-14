@@ -28,8 +28,6 @@ class TextStyleHelper {
         return textTheme.bodySmall;
       case 'rMedium14Category':
         return textTheme.labelLarge;
-      case 'rMedium14CategoryNonActive':
-        return textTheme.labelMedium;
       case 'rMedium14Sort':
         return textTheme.labelSmall;
     }

@@ -119,29 +119,7 @@ class DetailScreen extends StatelessWidget {
                             TextStyleHelper.getTextStyle(context, 'rMedium16'),
                       ),
                       SizedBox(height: 6),
-                      ReadMoreText(
-                        arguments.description!,
-                        style:
-                            TextStyleHelper.getTextStyle(context, 'rRegular14'),
-                        trimLines: 5,
-                        // trimLength: 250,
-                        colorClickableText: AppColors.lightGreyColor,
-                        trimMode: TrimMode.Line,
-                        moreStyle:
-                            TextStyleHelper.getTextStyle(context, 'rMedium16')!
-                                .copyWith(
-                          color: AppColors.lightGreyColor,
-                          decoration: TextDecoration.underline,
-                        ),
-                        lessStyle:
-                            TextStyleHelper.getTextStyle(context, 'rMedium16')!
-                                .copyWith(
-                          color: AppColors.lightGreyColor,
-                          decoration: TextDecoration.underline,
-                        ),
-                        trimCollapsedText: '\nSee more',
-                        trimExpandedText: '\nSee less',
-                      ),
+                      descriptionText(arguments, context),
                     ],
                   ),
                 ),
@@ -150,6 +128,28 @@ class DetailScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  ReadMoreText descriptionText(Destination arguments, BuildContext context) {
+    return ReadMoreText(
+      arguments.description!,
+      style: TextStyleHelper.getTextStyle(context, 'rRegular14'),
+      trimLines: 5,
+      textAlign: TextAlign.justify,
+      // trimLength: 250,
+      colorClickableText: AppColors.lightGreyColor,
+      trimMode: TrimMode.Line,
+      moreStyle: TextStyleHelper.getTextStyle(context, 'rMedium16')!.copyWith(
+        color: AppColors.lightGreyColor,
+        decoration: TextDecoration.underline,
+      ),
+      lessStyle: TextStyleHelper.getTextStyle(context, 'rMedium16')!.copyWith(
+        color: AppColors.lightGreyColor,
+        decoration: TextDecoration.underline,
+      ),
+      trimCollapsedText: '\nSee more',
+      trimExpandedText: '\nSee less',
     );
   }
 
@@ -186,7 +186,7 @@ class DetailScreen extends StatelessWidget {
         ),
         SizedBox(width: 10),
         Text(
-          '4,5',
+          arguments.rating.toString(),
           style: TextStyleHelper.getTextStyle(context, 'rMedium16'),
         ),
       ],

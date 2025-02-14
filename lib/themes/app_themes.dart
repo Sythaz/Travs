@@ -25,7 +25,6 @@ class AppTheme {
       bodyMedium: AppTextStyleDark.rRegular14,
       bodySmall: AppTextStyleDark.rRegular10,
       labelLarge: AppTextStyleDark.rMedium14Category,
-      labelMedium: AppTextStyleDark.rMedium14CategoryNonActive,
       labelSmall: AppTextStyleDark.rMedium14Sort,
       titleSmall: AppTextStyleDark.rMedium16Name,
     ),
@@ -52,7 +51,6 @@ class AppTheme {
       bodyMedium: AppTextStyleLight.rRegular14,
       bodySmall: AppTextStyleLight.rRegular10,
       labelLarge: AppTextStyleLight.rMedium14Category,
-      labelMedium: AppTextStyleLight.rMedium14CategoryNonActive,
       labelSmall: AppTextStyleLight.rMedium14Sort,
       titleSmall: AppTextStyleLight.rMedium16Name,
     ),
@@ -80,8 +78,6 @@ class AppTextStyleLight {
       AppFonts.robotoMedium16.copyWith(color: AppColors.primaryColor1);
   static TextStyle rMedium14Category =
       AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor2);
-  static TextStyle rMedium14CategoryNonActive =
-      AppFonts.robotoMedium14.copyWith(color: AppColors.lightGreyColor);
   static TextStyle rMedium14Sort =
       AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor1);
   static TextStyle rRegular10 =
@@ -109,8 +105,6 @@ class AppTextStyleDark {
       AppFonts.robotoRegular14.copyWith(color: AppColors.lightGreyColor);
   static TextStyle rMedium14Category =
       AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor1);
-  static TextStyle rMedium14CategoryNonActive =
-      AppFonts.robotoMedium14.copyWith(color: AppColors.lightGreyColor);
   static TextStyle rMedium14Sort =
       AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor2);
   static TextStyle rRegular10 =
