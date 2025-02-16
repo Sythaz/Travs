@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Container customBottomNavigation(BuildContext context, Color color, Widget child) {
+Container customBottomNavigation(
+    BuildContext context, Color color, Widget child) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(35),
@@ -15,8 +16,8 @@ Container customBottomNavigation(BuildContext context, Color color, Widget child
       ],
     ),
     height: 70,
+    // margin: EdgeInsets.only(right: 16, left: 16, bottom: 16),
     margin: EdgeInsets.all(16),
-    // width: 10,
     child: child,
   );
 }

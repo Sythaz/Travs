@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:travs/models/destination.dart';
 import 'package:travs/routes/app_route.dart';
 
+import '../../controllers/c_favorite.dart';
 import '../../themes/app_colors.dart';
 import '../../themes/text_style_helper.dart';
 
@@ -16,6 +17,8 @@ class Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cFavorite = Get.put(CFavorite());
+
     return Builder(
       builder: (context) {
         return Material(
@@ -49,9 +52,20 @@ class Cards extends StatelessWidget {
                         ),
                         height: 50,
                         width: 50,
-                        child: const Icon(
-                          Icons.bookmark_add_outlined,
-                          color: AppColors.whiteColor,
+                        child: Obx(
+                          () {
+                            if (cFavorite.favoriteList.any((fav) =>
+                                fav['destination_name'] == data!.name!)) {
+                              return Icon(
+                                Icons.bookmark,
+                                color: AppColors.whiteColor,
+                              );
+                            }
+                            return const Icon(
+                              Icons.bookmark_add_outlined,
+                              color: AppColors.whiteColor,
+                            );
+                          },
                         ),
                       ),
                     ),

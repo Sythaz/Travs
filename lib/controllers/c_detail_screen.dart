@@ -1,9 +1,15 @@
 import 'package:get/get.dart';
+import 'package:travs/controllers/c_favorite.dart';
 
 class CDetailScreen extends GetxController {
-  RxBool isFavorite = false.obs;
+  final cFavorite = Get.put(CFavorite());
 
-  toggleFavorite() {
-    isFavorite.value = !isFavorite.value;
+  toggleFavorite(nameDestination) async {
+    if (cFavorite.favoriteList
+        .any((fav) => fav['destination_name'] == nameDestination)) {
+      await cFavorite.removeItemFavorite(nameDestination);
+    } else {
+      await cFavorite.insertFavorite(nameDestination);
+    }
   }
 }

@@ -8,7 +8,7 @@ import '../themes/app_themes.dart';
 import '../views/widgets/cards.dart';
 
 class CDiscover extends GetxController {
-  var isLoading = false.obs;
+  final isLoading = false.obs;
   final isDarkMode = false.obs;
   final isGrid = false.obs;
   final isAscending = true.obs;
@@ -35,11 +35,8 @@ class CDiscover extends GetxController {
 
       _applyFilters();
       updateCards();
-
-      // To show shimmer loading
-      await Future.delayed(const Duration(seconds: 2));
     } catch (e) {
-      print('$e');
+      Get.snackbar('Error fetching destination', e.toString());
     } finally {
       isLoading.value = false;
     }
@@ -62,7 +59,7 @@ class CDiscover extends GetxController {
     );
   }
 
-  _applyFilters({String searchQuery = '', String newCategory = ''}) {
+  _applyFilters({String searchQuery = ''}) {
     List<Destination> tempList = _listDestination;
 
     if (searchQuery.isNotEmpty) {
@@ -81,22 +78,7 @@ class CDiscover extends GetxController {
           .toList();
     }
 
-    _filteredListDestination.value = tempList;
-
-    updateCards();
-  }
-
-  sortCategory(String newCategory) {
-    category.value = newCategory;
-    _applyFilters(newCategory: newCategory);
-
-    updateCards();
-  }
-
-  sortDestination() {
-    isAscending.value = !isAscending.value;
-
-    _filteredListDestination.sort(
+    tempList.sort(
       (a, b) {
         final firstName = a.name?.toLowerCase();
         final secondName = b.name?.toLowerCase();
@@ -106,7 +88,21 @@ class CDiscover extends GetxController {
       },
     );
 
+    _filteredListDestination.value = tempList;
+
     updateCards();
+  }
+
+  sortCategory(String newCategory) {
+    category.value = newCategory;
+
+    _applyFilters();
+  }
+
+  sortDestination() {
+    isAscending.value = !isAscending.value;
+
+    _applyFilters();
   }
 
   searchDestination(String query) {

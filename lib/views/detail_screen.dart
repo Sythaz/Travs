@@ -7,6 +7,7 @@ import 'package:travs/models/destination.dart';
 import 'package:travs/themes/text_style_helper.dart';
 import 'package:travs/views/widgets/custom_bottom_navigation.dart';
 
+import '../controllers/c_favorite.dart';
 import '../themes/app_colors.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -16,6 +17,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Destination arguments = Get.arguments;
     final cDetailScreen = Get.put(CDetailScreen());
+    final cFavorite = Get.put(CFavorite());
 
     return Scaffold(
       bottomNavigationBar: customBottomNavigation(
@@ -23,34 +25,53 @@ class DetailScreen extends StatelessWidget {
         Theme.of(context).colorScheme.error,
         Bounce(
           onTap: () {
-            cDetailScreen.toggleFavorite();
+            cDetailScreen.toggleFavorite(arguments.name);
           },
-          scaleFactor: 0.8,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Add to Favorite',
-                style: TextStyleHelper.getTextStyle(context, 'rMedium20'),
-              ),
-              SizedBox(width: 5),
-              Obx(
-                () {
-                  if (cDetailScreen.isFavorite.value) {
-                    return Icon(
-                      Icons.bookmark_outline,
+          scaleFactor: 0.9,
+          child: Obx(
+            () {
+              if (cFavorite.isLoading.value) {
+                return Center(
+                  child: Text(
+                    'Loading...',
+                    style: TextStyleHelper.getTextStyle(context, 'rMedium20'),
+                  ),
+                );
+              }
+              if (cFavorite.favoriteList
+                  .any((fav) => fav['destination_name'] == arguments.name)) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Remove to Favorite',
+                      style: TextStyleHelper.getTextStyle(context, 'rMedium20'),
+                    ),
+                    SizedBox(width: 5),
+                    Icon(
+                      Icons.bookmark_outlined,
                       size: 28,
                       color: Theme.of(context).colorScheme.secondary,
-                    );
-                  }
-                  return Icon(
-                    Icons.bookmark_outlined,
+                    ),
+                  ],
+                );
+              }
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Add to Favorite',
+                    style: TextStyleHelper.getTextStyle(context, 'rMedium20'),
+                  ),
+                  SizedBox(width: 5),
+                  Icon(
+                    Icons.bookmark_outline,
                     size: 28,
                     color: Theme.of(context).colorScheme.secondary,
-                  );
-                },
-              ),
-            ],
+                  ),
+                ],
+              );
+            },
           ),
         ),
       ),

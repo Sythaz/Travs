@@ -27,26 +27,26 @@
     "cover": "https://i.pinimg.com/736x/df/9d/28/df9d28834b285414dbff2b10d5656e54.jpg"
   },
   {
-    "name": "Gunung Bromo",
+    "name": "Mount Bromo",
     "location": "Jawa Timur, Indonesia",
-    "status": "Buka",
+    "status": "Open",
     "category": "Asia",
     "rating": 4.6,
-    "description": "Gunung Bromo, terletak di Provinsi Jawa Timur, Indonesia, adalah salah satu gunung berapi paling ikonik di Nusantara.\nDengan ketinggian sekitar 2.329 meter di atas permukaan laut, Bromo menawarkan pemandangan alam yang luar biasa, terutama saat matahari terbit.\nWisatawan sering mendaki pada dini hari untuk mencapai titik pandang di Penanjakan, di mana mereka dapat menyaksikan panorama matahari terbit yang memukau dengan latar belakang Gunung Semeru yang megah.\nKawah Bromo sendiri memiliki diameter sekitar 800 meter, dan dari puncaknya, pengunjung dapat melihat lanskap lautan pasir yang luas, dikenal sebagai 'Segara Wedi'.\nSelain itu, budaya lokal suku Tengger yang masih kental menambah daya tarik tersendiri bagi para pelancong.",
+    "description": "Mount Bromo, located in East Java Province, Indonesia, is one of the most iconic volcanoes in the archipelago.\nWith an elevation of approximately 2,329 meters above sea level, Bromo offers stunning natural scenery, especially during sunrise.\nTourists often hike early in the morning to reach the viewpoint at Penanjakan, where they can witness a breathtaking sunrise panorama with the majestic Mount Semeru in the background.\nThe Bromo crater itself has a diameter of about 800 meters, and from its peak, visitors can see a vast landscape of sand, known as the 'Segara Wedi' (Sea of Sand).\nAdditionally, the strong local culture of the Tengger people adds a unique charm for travelers.",
     "cover": "https://i.pinimg.com/736x/69/b3/fc/69b3fc05c9a8890fa9029cac39309aaf.jpg"
   },
   {
     "name": "Galápagos Islands",
     "location": "Ecuador, South America",
     "status": "Open",
-    "category": "South America",
+    "category": "America",
     "rating": 4.9,
     "description": "Situated approximately 1,000 kilometers off the coast of Ecuador, the Galápagos Islands are an archipelago of volcanic islands renowned for their unique biodiversity.\nThe isolation of these islands has led to the evolution of species found nowhere else on Earth, such as the giant tortoise, marine iguana, and blue-footed booby.\nDeclared a UNESCO World Heritage site, the Galápagos serve as a living museum and showcase of evolution.\nVisitors can engage in guided tours to observe the diverse wildlife, snorkel in crystal-clear waters teeming with marine life, and learn about the conservation efforts aimed at preserving this ecological treasure.",
     "cover": "https://i.pinimg.com/736x/eb/c4/7f/ebc47f624a34134ff1ba359ebfb0a2fd.jpg"
   },
   {
     "name": "Mount Kilimanjaro",
-    "location": "Tanzania, Africa",
+    "location": "Tanzania",
     "status": "Open",
     "category": "Africa",
     "rating": 4.7,
@@ -74,10 +74,10 @@
   {
     "name": "Banda Neira",
     "location": "Maluku, Indonesia",
-    "status": "Buka",
+    "status": "Open",
     "category": "Asia",
     "rating": 4.5,
-    "description": "Banda Neira adalah salah satu pulau utama di Kepulauan Banda, Maluku, Indonesia.\nPulau ini memiliki sejarah panjang sebagai pusat perdagangan rempah-rempah, terutama pala dan fuli, pada masa kolonial.\nBenteng Belgica, yang dibangun oleh Belanda pada abad ke-17, masih berdiri kokoh sebagai saksi bisu masa lalu yang kaya.\nSelain nilai sejarahnya, Banda Neira menawarkan keindahan alam yang luar biasa, dengan perairan yang jernih dan terumbu karang yang masih terjaga, menjadikannya destinasi ideal untuk snorkeling dan diving.\nKombinasi antara warisan budaya dan keindahan alam membuat Banda Neira menjadi tujuan wisata yang unik dan menarik.",
+    "description": "Banda Neira is one of the main islands in the Banda Archipelago, Maluku, Indonesia.\nThe island has a long history as a center of the spice trade, especially nutmeg and mace, during the colonial era.\nFort Belgica, built by the Dutch in the 17th century, still stands strong as a silent witness to its rich past.\nIn addition to its historical significance, Banda Neira offers extraordinary natural beauty, with crystal-clear waters and well-preserved coral reefs, making it an ideal destination for snorkeling and diving.\nThe combination of cultural heritage and natural beauty makes Banda Neira a unique and attractive tourist destination.",
     "cover": "https://i.pinimg.com/736x/1d/3a/7d/1d3a7dba447fbc45c1ce34b35c2d59c7.jpg"
   },
   {
@@ -91,7 +91,7 @@
   },
   {
     "name": "The Great Barrier Reef",
-    "location": "Queensland, Australia",
+    "location": "Queensland",
     "status": "Open",
     "category": "Australia",
     "rating": 4.9,
@@ -145,7 +145,7 @@
   },
   {
     "name": "Sydney Opera House",
-    "location": "Sydney, Australia",
+    "location": "Sydney",
     "status": "Open",
     "category": "Australia",
     "rating": 4.7,

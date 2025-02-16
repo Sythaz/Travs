@@ -6,7 +6,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:travs/controllers/c_discover.dart';
+import 'package:travs/controllers/c_favorite.dart';
 import 'package:travs/views/widgets/custom_bottom_navigation.dart';
+import '../controllers/c_user.dart';
 import '../routes/app_route.dart';
 import '../themes/app_assets.dart';
 import '../themes/app_colors.dart';
@@ -21,11 +23,16 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final cDiscover = Get.put(CDiscover());
+  final cUser = Get.put(CUser());
+  final cFavorite = Get.put(CFavorite());
   final searchController = TextEditingController();
 
   @override
   void initState() {
+    cUser.getDataUser();
     cDiscover.getDataDestination();
+    cFavorite.getDataFavorite();
+
     super.initState();
   }
 
@@ -66,14 +73,14 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: appBarCustom(context),
           body: Obx(
             () {
-              if (cDiscover.isLoading.value) {
+              if (cDiscover.isLoading.value || cUser.isLoading.value) {
                 return shimmerWidget();
               }
               return Column(
                 spacing: 10,
                 children: [
                   header(context),
-                  searchField(context),
+                  // searchField(context),
                   category(),
                   sortAndGrid(context),
                   Obx(
@@ -262,10 +269,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar appBarCustom(BuildContext context) {
     return AppBar(
+      surfaceTintColor: Colors.transparent,
       automaticallyImplyLeading: false,
       leading: Obx(
         () {
-          if (cDiscover.isLoading.value) {
+          if (cDiscover.isLoading.value || cUser.isLoading.value) {
             return Padding(
               padding: const EdgeInsets.only(left: 16, top: 8, bottom: 10),
               child: Shimmer.fromColors(
@@ -288,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
       centerTitle: true,
       title: Obx(
         () {
-          if (cDiscover.isLoading.value) {
+          if (cDiscover.isLoading.value || cUser.isLoading.value) {
             return Shimmer.fromColors(
               baseColor: Colors.grey[300]!,
               highlightColor: Colors.grey[100]!,
@@ -311,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: [
         Obx(
           () {
-            if (cDiscover.isLoading.value) {
+            if (cDiscover.isLoading.value || cUser.isLoading.value) {
               return Padding(
                 padding: const EdgeInsets.only(right: 16),
                 child: Shimmer.fromColors(
@@ -330,7 +338,12 @@ class _HomeScreenState extends State<HomeScreen> {
             }
             return Padding(
               padding: const EdgeInsets.only(right: 16),
-              child: Icon(Icons.search_rounded, size: 32),
+              child: CircleAvatar(
+                backgroundColor: AppColors.primaryColor1,
+                backgroundImage: NetworkImage(
+                  cUser.user['profile'],
+                ),
+              ),
             );
           },
         ),
@@ -348,7 +361,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hello, Syafiq!',
+                'Hello, ${cUser.user['name']}!',
                 style: TextStyleHelper.getTextStyle(context, 'rBold24'),
               ),
               Text(
@@ -601,9 +614,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         height: 30,
                         width: 30,
-                        child: const Icon(
-                          Icons.bookmark_add_outlined,
-                          color: AppColors.whiteColor,
+                        child: Obx(
+                          () {
+                            if (cFavorite.favoriteList.any((fav) =>
+                                fav['destination_name'] ==
+                                cDiscover.getListDestination[index].name)) {
+                              return Icon(
+                                Icons.bookmark,
+                                color: AppColors.whiteColor,
+                              );
+                            }
+                            return const Icon(
+                              Icons.bookmark_add_outlined,
+                              color: AppColors.whiteColor,
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -664,6 +689,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           )
         : Container(
+            key: UniqueKey(),            
             padding: EdgeInsets.symmetric(horizontal: 12),
             height: 480,
             width: double.infinity,
@@ -671,7 +697,8 @@ class _HomeScreenState extends State<HomeScreen> {
               numberOfCardsDisplayed: cardLength == 1 ? 1 : 2,
               threshold: 70,
               cardsCount: cardLength,
-              isDisabled: cDiscover.getListDestination.length == 1,
+              isDisabled:
+                  cDiscover.getListDestination.length == 1 || cardLength == 1,
               padding: const EdgeInsets.symmetric(horizontal: 32),
               cardBuilder: (context, index, horizontalOffsetPercentage,
                       verticalOffsetPercentage) =>
