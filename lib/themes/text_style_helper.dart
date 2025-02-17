@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TextStyleHelper {
-  // Helper untuk mengambil TextStyle berdasarkan tema aktif
   static TextStyle? getTextStyle(BuildContext context, String styleKey) {
     TextTheme textTheme = Theme.of(context).textTheme;
 

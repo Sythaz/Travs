@@ -643,7 +643,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 70,
                         width: double.infinity,
                         child: Column(
-                          // spacing: 5,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

@@ -16,7 +16,6 @@ Container customBottomNavigation(
       ],
     ),
     height: 70,
-    // margin: EdgeInsets.only(right: 16, left: 16, bottom: 16),
     margin: EdgeInsets.all(16),
     child: child,
   );

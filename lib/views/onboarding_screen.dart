@@ -21,7 +21,6 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           Image.asset(AppAssets.bgSplashScreen, fit: BoxFit.cover),
           Align(
-            // Alignment ini mirip dengan center namun bisa diatur horizontal dan vertikalnya
             alignment: Alignment(0, -0.8),
             child: SizedBox(
               width: 255,

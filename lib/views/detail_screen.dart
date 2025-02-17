@@ -82,7 +82,6 @@ class DetailScreen extends StatelessWidget {
             alignment: Alignment(0, -1),
             child: SizedBox(
               width: double.infinity,
-              // height: 600,
               child: Image.network(
                 arguments.cover!,
                 fit: BoxFit.cover,
@@ -158,7 +157,6 @@ class DetailScreen extends StatelessWidget {
       style: TextStyleHelper.getTextStyle(context, 'rRegular14'),
       trimLines: 5,
       textAlign: TextAlign.justify,
-      // trimLength: 250,
       colorClickableText: AppColors.lightGreyColor,
       trimMode: TrimMode.Line,
       moreStyle: TextStyleHelper.getTextStyle(context, 'rMedium16')!.copyWith(

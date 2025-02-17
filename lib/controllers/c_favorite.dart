@@ -4,7 +4,6 @@ import 'package:travs/services/favorite_service.dart';
 
 class CFavorite extends GetxController {
   var isLoading = false.obs;
-  // berupa list model favoritemodel
   var favoriteList = <FavoriteModel>[].obs;
 
   getDataFavorite() async {
@@ -33,9 +32,6 @@ class CFavorite extends GetxController {
 
       await FavoriteService.removeFavorite(nameDestination);
 
-      // favoriteList.removeWhere(
-      //   (item) => item['destination_name'] == nameDestination,
-      // );
       getDataFavorite();
     } catch (e) {
       Get.snackbar('Error removing favorite', e.toString());

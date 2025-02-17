@@ -81,7 +81,6 @@ class Cards extends StatelessWidget {
                         height: 70,
                         width: double.infinity,
                         child: Column(
-                          // spacing: 5,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
