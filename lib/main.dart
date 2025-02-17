@@ -6,7 +6,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:travs/routes/app_page.dart';
-import 'package:travs/views/home_screen.dart';
 import 'package:travs/views/onboarding_screen.dart';
 import 'controllers/c_user.dart';
 import 'themes/app_themes.dart';
@@ -52,7 +51,7 @@ class MainApp extends StatelessWidget {
       theme: themeKu,
       home: Builder(
         builder: (context) {
-          return HomeScreen();
+          return OnBoardingScreen();
         },
       ),
       getPages: AppPages.pages,

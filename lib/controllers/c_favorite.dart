@@ -3,13 +3,15 @@ import 'package:travs/models/favorite_model.dart';
 import 'package:travs/services/favorite_service.dart';
 
 class CFavorite extends GetxController {
-  var isLoading = false.obs;
-  var favoriteList = <FavoriteModel>[].obs;
+  final isLoading = false.obs;
+  final isAscending = true.obs;
+  final favoriteList = <FavoriteModel>[].obs;
 
   getDataFavorite() async {
     final data = await FavoriteService.fetchFavorite();
-
     favoriteList.value = data;
+
+    sortDestination();
   }
 
   insertFavorite(nameDestination) async {
@@ -38,5 +40,19 @@ class CFavorite extends GetxController {
     } finally {
       isLoading.value = false;
     }
+  }
+
+  sortDestination() {
+    isAscending.value = !isAscending.value;
+
+    favoriteList.sort(
+      (a, b) {
+        final firstName = a.destinationName?.toLowerCase();
+        final secondName = b.destinationName?.toLowerCase();
+        return isAscending.value
+            ? firstName!.compareTo(secondName!)
+            : secondName!.compareTo(firstName!);
+      },
+    );
   }
 }

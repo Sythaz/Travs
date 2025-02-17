@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:travs/models/user_model.dart';
 import 'package:travs/services/user_service.dart';
 

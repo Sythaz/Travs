@@ -65,7 +65,7 @@ class DetailScreen extends StatelessWidget {
                   ),
                   SizedBox(width: 5),
                   Icon(
-                    Icons.bookmark_outline,
+                    Icons.bookmark_add_outlined,
                     size: 28,
                     color: Theme.of(context).colorScheme.secondary,
                   ),

@@ -18,6 +18,8 @@ class CDiscover extends GetxController {
 
   final _listDestination = <Destination>[].obs;
   final _filteredListDestination = <Destination>[].obs;
+
+  List<Destination> get getAllListDestination => _listDestination;
   List<Destination> get getListDestination => _filteredListDestination;
 
   final _cards = [].obs;
