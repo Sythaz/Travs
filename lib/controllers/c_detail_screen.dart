@@ -6,7 +6,7 @@ class CDetailScreen extends GetxController {
 
   toggleFavorite(nameDestination) async {
     if (cFavorite.favoriteList
-        .any((fav) => fav['destination_name'] == nameDestination)) {
+        .any((fav) => fav.destinationName == nameDestination)) {
       await cFavorite.removeItemFavorite(nameDestination);
     } else {
       await cFavorite.insertFavorite(nameDestination);

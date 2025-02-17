@@ -341,7 +341,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: CircleAvatar(
                 backgroundColor: AppColors.primaryColor1,
                 backgroundImage: NetworkImage(
-                  cUser.user['profile'],
+                  cUser.user.value.profile!,
                 ),
               ),
             );
@@ -361,7 +361,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hello, ${cUser.user['name']}!',
+                'Hello, ${cUser.user.value.name}!',
                 style: TextStyleHelper.getTextStyle(context, 'rBold24'),
               ),
               Text(
@@ -617,7 +617,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Obx(
                           () {
                             if (cFavorite.favoriteList.any((fav) =>
-                                fav['destination_name'] ==
+                                fav.destinationName ==
                                 cDiscover.getListDestination[index].name)) {
                               return Icon(
                                 Icons.bookmark,
@@ -689,7 +689,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           )
         : Container(
-            key: UniqueKey(),            
+            key: UniqueKey(),
             padding: EdgeInsets.symmetric(horizontal: 12),
             height: 480,
             width: double.infinity,

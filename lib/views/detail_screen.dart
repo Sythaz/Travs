@@ -39,7 +39,7 @@ class DetailScreen extends StatelessWidget {
                 );
               }
               if (cFavorite.favoriteList
-                  .any((fav) => fav['destination_name'] == arguments.name)) {
+                  .any((fav) => fav.destinationName == arguments.name)) {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

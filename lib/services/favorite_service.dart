@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:travs/models/favorite_model.dart';
 
 class FavoriteService {
   static Future<dynamic> fetchFavorite() async {
@@ -11,7 +12,7 @@ class FavoriteService {
           .select('destination_name')
           .eq('user_id', client.auth.currentUser!.id);
 
-      return res;
+      return FavoriteModel.fromJsonList(res);
     } catch (e) {
       Get.snackbar('Error fetching favorite', e.toString());
     }

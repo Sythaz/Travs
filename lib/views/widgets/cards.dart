@@ -54,8 +54,8 @@ class Cards extends StatelessWidget {
                         width: 50,
                         child: Obx(
                           () {
-                            if (cFavorite.favoriteList.any((fav) =>
-                                fav['destination_name'] == data!.name!)) {
+                            if (cFavorite.favoriteList.any(
+                                (fav) => fav.destinationName == data!.name!)) {
                               return Icon(
                                 Icons.bookmark,
                                 color: AppColors.whiteColor,

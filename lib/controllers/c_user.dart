@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:travs/models/user_model.dart';
 import 'package:travs/services/user_service.dart';
 
 class CUser extends GetxController {
   var isLoading = false.obs;
-  // final client = Supabase.instance.client;
-  var user = {};
+  final user = UserModel().obs;
 
   login() async {
     try {
@@ -23,7 +23,7 @@ class CUser extends GetxController {
     isLoading.value = true;
 
     final data = await UserService.fetchUser();
-    user = data as Map<String, dynamic>;
+    user.value = data;
 
     isLoading.value = false;
   }

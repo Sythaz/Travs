@@ -1,6 +1,7 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:travs/models/user_model.dart';
 
 class UserService {
   static autoLogin() async {
@@ -22,7 +23,7 @@ class UserService {
           .eq('user_id', client.auth.currentUser!.id)
           .limit(1)
           .single();
-      return res;
+      return UserModel.fromJson(res);
     } catch (e) {
       Get.snackbar('Error fetching user', e.toString());
     }
