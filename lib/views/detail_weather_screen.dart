@@ -40,7 +40,9 @@ class DetailWeatherScreen extends StatelessWidget {
             SizedBox(height: 16),
             Center(
               child: SvgPicture.asset(
-                AppAssets.clearWeather,
+                _getWeatherIcon(
+                  cWeather.weather![0].main.toString(),
+                ),
                 width: 250,
               ),
             ),
@@ -145,5 +147,34 @@ class DetailWeatherScreen extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String _getWeatherIcon(String weather) {
+    switch (weather.toLowerCase()) {
+      case 'haze' ||
+            'mist' ||
+            'fog' ||
+            'smoke' ||
+            'sand' ||
+            'dust' ||
+            'ash' ||
+            'squall' ||
+            'tornado':
+        return AppAssets.atmosphereWeather;
+      case 'clear':
+        return AppAssets.clearWeather;
+      case 'clouds':
+        return AppAssets.cloudsWeather;
+      case 'rain':
+        return AppAssets.rainWeather;
+      case 'snow':
+        return AppAssets.snowWeather;
+      case 'drizzle':
+        return AppAssets.drizzleWeather;
+      case 'thunderstorm':
+        return AppAssets.thunderstormWeather;
+      default:
+        return AppAssets.clearWeather;
+    }
   }
 }
