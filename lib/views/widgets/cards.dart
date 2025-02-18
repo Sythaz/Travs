@@ -8,7 +8,7 @@ import '../../themes/app_colors.dart';
 import '../../themes/text_style_helper.dart';
 
 class Cards extends StatelessWidget {
-  final Destination? data;
+  final DestinationModel? data;
 
   const Cards({
     super.key,

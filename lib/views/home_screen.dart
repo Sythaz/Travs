@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final cUser = Get.put(CUser());
   final cFavorite = Get.put(CFavorite());
   final searchController = TextEditingController();
+  final cHome = Get.put(CHome());
 
   @override
   void initState() {
@@ -38,8 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final cHome = Get.put(CHome());
-
     return ThemeSwitchingArea(
       child: Scaffold(
         appBar: appBarCustom(context, cHome),

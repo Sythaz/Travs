@@ -16,11 +16,11 @@ class CDiscover extends GetxController {
   final categories = [].obs;
   final category = 'All Place'.obs;
 
-  final _listDestination = <Destination>[].obs;
-  final _filteredListDestination = <Destination>[].obs;
+  final _listDestination = <DestinationModel>[].obs;
+  final _filteredListDestination = <DestinationModel>[].obs;
 
-  List<Destination> get getAllListDestination => _listDestination;
-  List<Destination> get getListDestination => _filteredListDestination;
+  List<DestinationModel> get getAllListDestination => _listDestination;
+  List<DestinationModel> get getListDestination => _filteredListDestination;
 
   final _cards = [].obs;
   get getListCards => _cards;
@@ -62,7 +62,7 @@ class CDiscover extends GetxController {
   }
 
   _applyFilters({String searchQuery = ''}) {
-    List<Destination> tempList = _listDestination;
+    List<DestinationModel> tempList = _listDestination;
 
     if (searchQuery.isNotEmpty) {
       tempList = tempList

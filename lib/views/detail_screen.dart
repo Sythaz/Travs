@@ -8,17 +8,32 @@ import 'package:travs/themes/text_style_helper.dart';
 import 'package:travs/views/widgets/custom_bottom_navigation.dart';
 
 import '../controllers/c_favorite.dart';
+import '../controllers/c_weather.dart';
+import '../routes/app_route.dart';
 import '../themes/app_colors.dart';
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    Destination arguments = Get.arguments;
-    final cDetailScreen = Get.put(CDetailScreen());
-    final cFavorite = Get.put(CFavorite());
+  State<DetailScreen> createState() => _DetailScreenState();
+}
 
+class _DetailScreenState extends State<DetailScreen> {
+  DestinationModel arguments = Get.arguments;
+  final cDetailScreen = Get.put(CDetailScreen());
+  final cFavorite = Get.put(CFavorite());
+  final cWeather = Get.put(CWeather());
+
+  @override
+  void initState() {
+    cWeather.getDataWeather(arguments.city!);
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: customBottomNavigation(
         context,
@@ -129,7 +144,7 @@ class DetailScreen extends StatelessWidget {
                   child: ListView(
                     controller: scrollController,
                     children: [
-                      detailHeader(arguments, context),
+                      detailHeader(context),
                       SizedBox(height: 16),
                       detailStatus(context, arguments),
                       SizedBox(height: 16),
@@ -151,7 +166,103 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
-  ReadMoreText descriptionText(Destination arguments, BuildContext context) {
+  Row detailHeader(BuildContext context) {
+    return Row(
+      spacing: 15,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                arguments.name!,
+                style: TextStyleHelper.getTextStyle(
+                  context,
+                  'rBold24',
+                ),
+                softWrap: true,
+                overflow: TextOverflow.visible,
+              ),
+              Row(
+                spacing: 5,
+                children: [
+                  Icon(
+                    Icons.location_on_rounded,
+                    size: 16,
+                    color: AppColors.iconColor,
+                  ),
+                  Text(
+                    arguments.location!,
+                    style: TextStyleHelper.getTextStyle(
+                        context, 'rMedium16Location'),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            if (cWeather.isLoading.isFalse) {
+              Get.toNamed(AppRoutes.detaiWeatherScreen, arguments: {
+                'cWeather': cWeather.weatherModel.value,
+                'cityName': arguments.city,
+              });
+            }
+          },
+          child: Column(
+            spacing: 5,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                spacing: 5,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primary,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Icon(
+                      Icons.cloud_rounded,
+                      color: AppColors.iconColor,
+                    ),
+                  ),
+                  Obx(
+                    () {
+                      if (cWeather.isLoading.value) {
+                        return Text(
+                          'Loading...',
+                          style: TextStyleHelper.getTextStyle(
+                              context, 'rMedium16'),
+                        );
+                      }
+                      return Text(
+                        '${cWeather.weatherModel.value.main!.temp!.toInt()} °C',
+                        style:
+                            TextStyleHelper.getTextStyle(context, 'rMedium16'),
+                      );
+                    },
+                  ),
+                ],
+              ),
+              Text(
+                'See details',
+                style: TextStyleHelper.getTextStyle(context, 'rRegular10')!
+                    .copyWith(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  ReadMoreText descriptionText(
+      DestinationModel arguments, BuildContext context) {
     return ReadMoreText(
       arguments.description!,
       style: TextStyleHelper.getTextStyle(context, 'rRegular14'),
@@ -172,7 +283,7 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
-  Row detailStatus(BuildContext context, Destination arguments) {
+  Row detailStatus(BuildContext context, DestinationModel arguments) {
     return Row(
       children: [
         Container(
@@ -208,71 +319,6 @@ class DetailScreen extends StatelessWidget {
           arguments.rating.toString(),
           style: TextStyleHelper.getTextStyle(context, 'rMedium16'),
         ),
-      ],
-    );
-  }
-
-  Row detailHeader(Destination arguments, BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              arguments.name!,
-              style: TextStyleHelper.getTextStyle(
-                context,
-                'rBold24',
-              ),
-            ),
-            Row(
-              spacing: 5,
-              children: [
-                Icon(
-                  Icons.location_on_rounded,
-                  size: 16,
-                  color: AppColors.iconColor,
-                ),
-                Text(
-                  arguments.location!,
-                  style: TextStyleHelper.getTextStyle(
-                      context, 'rMedium16Location'),
-                ),
-              ],
-            )
-          ],
-        ),
-        Column(
-          spacing: 5,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              spacing: 10,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: Icon(
-                    Icons.cloud_rounded,
-                    color: AppColors.iconColor,
-                  ),
-                ),
-                Text(
-                  '16 °C',
-                  style: TextStyleHelper.getTextStyle(context, 'rMedium16'),
-                ),
-              ],
-            ),
-            Text(
-              'See details',
-              style: TextStyleHelper.getTextStyle(context, 'rRegular10'),
-            ),
-          ],
-        )
       ],
     );
   }

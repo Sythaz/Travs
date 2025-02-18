@@ -1,7 +1,8 @@
 [
   {
     "name": "Mount Merbabu",
-    "location": "Central Java, Indonesia",
+    "location": "Magelang, Indonesia",
+    "city": "Magelang",
     "status": "Closed",
     "category": "Asia",
     "rating": 4.5,
@@ -10,7 +11,8 @@
   },
   {
     "name": "Aurora Borealis",
-    "location": "Norway, Europe",
+    "location": "Tromsø, Norway",
+    "city": "Tromsø",
     "status": "Open",
     "category": "Europe",
     "rating": 4.8,
@@ -19,7 +21,8 @@
   },
   {
     "name": "Machu Picchu",
-    "location": "Peru, South America",
+    "location": "Aguas Calientes, Peru",
+    "city": "Aguas Calientes",
     "status": "Open",
     "category": "America",
     "rating": 4.7,
@@ -28,7 +31,8 @@
   },
   {
     "name": "Mount Bromo",
-    "location": "Jawa Timur, Indonesia",
+    "location": "Lumajang, Indonesia",
+    "city": "Lumajang",
     "status": "Open",
     "category": "Asia",
     "rating": 4.6,
@@ -37,7 +41,8 @@
   },
   {
     "name": "Galápagos Islands",
-    "location": "Ecuador, South America",
+    "location": "Puerto Ayora, Ecuador",
+    "city": "Puerto Ayora",
     "status": "Open",
     "category": "America",
     "rating": 4.9,
@@ -46,7 +51,8 @@
   },
   {
     "name": "Mount Kilimanjaro",
-    "location": "Tanzania",
+    "location": "Moshi, Tanzania",
+    "city": "Moshi",
     "status": "Open",
     "category": "Africa",
     "rating": 4.7,
@@ -55,7 +61,8 @@
   },
   {
     "name": "Petra",
-    "location": "Yordania",
+    "location": "Wadi Musa, Jordan",
+    "city": "Wadi Musa",
     "status": "Open",
     "category": "Asia",
     "rating": 4.8,
@@ -64,7 +71,8 @@
   },
   {
     "name": "Everest Base Camp",
-    "location": "Nepal",
+    "location": "Lukla, Nepal",
+    "city": "Lukla",
     "status": "Open",
     "category": "Asia",
     "rating": 4.6,
@@ -73,7 +81,8 @@
   },
   {
     "name": "Banda Neira",
-    "location": "Maluku, Indonesia",
+    "location": "Banda Neira, Indonesia",
+    "city": "Ambon City",
     "status": "Open",
     "category": "Asia",
     "rating": 4.5,
@@ -81,17 +90,19 @@
     "cover": "https://i.pinimg.com/736x/1d/3a/7d/1d3a7dba447fbc45c1ce34b35c2d59c7.jpg"
   },
   {
-    "name": "African Safari",
-    "location": "Kenya",
+    "name": "Tsavo East National Park",
+    "location": "Tsavo, Kenya",
+    "city": "Mtito Andei",
     "status": "Open",
     "category": "Africa",
     "rating": 4.7,
     "description": "Kenya's vast savannas and diverse ecosystems make it a premier destination for wildlife enthusiasts seeking an authentic African safari experience.\nThe Maasai Mara National Reserve, in particular, is renowned for its annual Great Migration, where millions of wildebeest, zebras, and gazelles traverse the plains in search of fresh grazing grounds.\nVisitors can embark on game drives to witness the 'Big Five'—lion, elephant, buffalo, leopard, and rhinoceros—in their natural habitats.\nCultural interactions with the Maasai people provide additional insights into the region's rich heritage.",
-    "cover": "https://i.pinimg.com/736x/a3/47/7d/a3477d044ab988626f2c3d8993f0f169.jpg"
+    "cover": "https://i.pinimg.com/736x/23/04/78/230478158c5aa976ea046b9eda62cdeb.jpg"
   },
   {
     "name": "The Great Barrier Reef",
-    "location": "Queensland",
+    "location": "Cairns, Australia",
+    "city": "Cairns",
     "status": "Open",
     "category": "Australia",
     "rating": 4.9,
@@ -100,7 +111,8 @@
   },
   {
     "name": "Santorini",
-    "location": "Greece",
+    "location": "Fira, Greece",
+    "city": "Fira",
     "status": "Open",
     "category": "Europe",
     "rating": 4.8,
@@ -110,6 +122,7 @@
   {
     "name": "Taj Mahal",
     "location": "Agra, India",
+    "city": "Agra",
     "status": "Open",
     "category": "Asia",
     "rating": 4.7,
@@ -118,7 +131,8 @@
   },
   {
     "name": "Grand Canyon",
-    "location": "Arizona, USA",
+    "location": "Grand Canyon Village, US",
+    "city": "Grand Canyon Village",
     "status": "Open",
     "category": "America",
     "rating": 4.6,
@@ -127,7 +141,8 @@
   },
   {
     "name": "Venice",
-    "location": "Italy",
+    "location": "Venice, Italy",
+    "city": "Venice",
     "status": "Open",
     "category": "Europe",
     "rating": 4.7,
@@ -136,7 +151,8 @@
   },
   {
     "name": "Banff National Park",
-    "location": "Alberta, Canada",
+    "location": "Banff, Canada",
+    "city": "Banff",
     "status": "Open",
     "category": "America",
     "rating": 4.8,
@@ -145,7 +161,8 @@
   },
   {
     "name": "Sydney Opera House",
-    "location": "Sydney",
+    "location": "Sydney, Australia",
+    "city": "Sydney",
     "status": "Open",
     "category": "Australia",
     "rating": 4.7,
