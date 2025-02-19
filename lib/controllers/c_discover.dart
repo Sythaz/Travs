@@ -25,6 +25,12 @@ class CDiscover extends GetxController {
   final _cards = [].obs;
   get getListCards => _cards;
 
+  @override
+  void onInit() {
+    super.onInit();
+    getDataDestination();
+  }
+
   getDataDestination() async {
     try {
       isLoading.value = true;

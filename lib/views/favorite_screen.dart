@@ -10,13 +10,12 @@ import '../themes/app_colors.dart';
 import '../themes/text_style_helper.dart';
 
 class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({super.key});
+  FavoriteScreen({super.key});
+  final cDiscover = Get.put(CDiscover());
+  final cFavorite = Get.put(CFavorite());
 
   @override
   Widget build(BuildContext context) {
-    final cDiscover = Get.put(CDiscover());
-    final cFavorite = Get.put(CFavorite());
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(

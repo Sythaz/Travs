@@ -14,28 +14,13 @@ import '../themes/app_colors.dart';
 import '../themes/text_style_helper.dart';
 import 'favorite_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreen extends StatelessWidget {
+  HomeScreen({super.key});
   final cDiscover = Get.put(CDiscover());
   final cUser = Get.put(CUser());
   final cFavorite = Get.put(CFavorite());
-  final searchController = TextEditingController();
   final cHome = Get.put(CHome());
-
-  @override
-  void initState() {
-    cUser.getDataUser();
-    cDiscover.getDataDestination();
-    cFavorite.getDataFavorite();
-
-    super.initState();
-  }
+  final searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

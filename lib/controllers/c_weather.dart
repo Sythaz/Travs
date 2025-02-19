@@ -4,8 +4,18 @@ import 'package:travs/models/weather_model.dart';
 import '../services/weather_service.dart';
 
 class CWeather extends GetxController {
+  final String cityName;
+
   final isLoading = false.obs;
   final weatherModel = WeatherModel().obs;
+
+  CWeather({required this.cityName});
+
+  @override
+  void onInit() {
+    super.onInit();
+    getDataWeather(cityName);
+  }
 
   getDataWeather(String cityName) async {
     try {

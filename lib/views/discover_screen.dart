@@ -41,7 +41,7 @@ class DiscoverScreen extends StatelessWidget {
                 Obx(
                   () {
                     if (cDiscover.isGrid.value) {
-                      return gridContent(cDiscover, cFavorite);
+                      return gridContent(context, cDiscover, cFavorite);
                     }
                     return cardContent(context, cDiscover);
                   },
@@ -457,110 +457,122 @@ class DiscoverScreen extends StatelessWidget {
     );
   }
 
-  Expanded gridContent(CDiscover cDiscover, CFavorite cFavorite) {
+  Expanded gridContent(
+      BuildContext context, CDiscover cDiscover, CFavorite cFavorite) {
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: GridView.builder(
-          shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 16,
-            crossAxisSpacing: 16,
-          ),
-          itemCount: cDiscover.getListDestination.length,
-          itemBuilder: (context, index) {
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: InkWell(
-                splashFactory: NoSplash.splashFactory,
-                onTap: () {
-                  Get.toNamed(
-                    AppRoutes.detailScreen,
-                    arguments: cDiscover.getListDestination[index],
-                  );
-                },
-                child: Stack(
-                  fit: StackFit.expand,
-                  alignment: Alignment.center,
-                  children: [
-                    Image.network(
-                      cDiscover.getListDestination[index].cover!,
-                      fit: BoxFit.cover,
-                    ),
-                    Align(
-                      alignment: Alignment(0.85, -0.9),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: .5),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        height: 30,
-                        width: 30,
-                        child: Obx(
-                          () {
-                            if (cFavorite.favoriteList.any((fav) =>
-                                fav.destinationName ==
-                                cDiscover.getListDestination[index].name)) {
-                              return Icon(
-                                Icons.bookmark,
+        child: Obx(() {
+          if (cDiscover.getListDestination.isEmpty) {
+            return Text(
+              "Oops! We couldn't find any matches.\nLet's try another search.",
+              textAlign: TextAlign.center,
+              style: TextStyleHelper.getTextStyle(context, 'rMedium14')!
+                  .copyWith(color: AppColors.lightGreyColor),
+            );
+          }
+          return GridView.builder(
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+            ),
+            itemCount: cDiscover.getListDestination.length,
+            itemBuilder: (context, index) {
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: InkWell(
+                  splashFactory: NoSplash.splashFactory,
+                  onTap: () {
+                    Get.toNamed(
+                      AppRoutes.detailScreen,
+                      arguments: cDiscover.getListDestination[index],
+                    );
+                  },
+                  child: Stack(
+                    fit: StackFit.expand,
+                    alignment: Alignment.center,
+                    children: [
+                      Image.network(
+                        cDiscover.getListDestination[index].cover!,
+                        fit: BoxFit.cover,
+                      ),
+                      Align(
+                        alignment: Alignment(0.85, -0.9),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black.withValues(alpha: .5),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          height: 30,
+                          width: 30,
+                          child: Obx(
+                            () {
+                              if (cFavorite.favoriteList.any((fav) =>
+                                  fav.destinationName ==
+                                  cDiscover.getListDestination[index].name)) {
+                                return Icon(
+                                  Icons.bookmark,
+                                  color: AppColors.whiteColor,
+                                );
+                              }
+                              return const Icon(
+                                Icons.bookmark_add_outlined,
                                 color: AppColors.whiteColor,
                               );
-                            }
-                            return const Icon(
-                              Icons.bookmark_add_outlined,
-                              color: AppColors.whiteColor,
-                            );
-                          },
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment(0, 1),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.black.withValues(alpha: .5),
-                        ),
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        height: 70,
-                        width: double.infinity,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              cDiscover.getListDestination[index].name!,
-                              style: TextStyleHelper.getTextStyle(
-                                      context, 'rMedium16')!
-                                  .copyWith(color: AppColors.whiteColor),
-                            ),
-                            Row(
-                              spacing: 3,
-                              children: [
-                                Icon(Icons.location_on_outlined, size: 15),
-                                Text(
-                                  cDiscover.getListDestination[index].location!,
-                                  style: TextStyleHelper.getTextStyle(
-                                      context, 'rRegular10'),
-                                ),
-                              ],
-                            ),
-                          ],
+                      Align(
+                        alignment: Alignment(0, 1),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.black.withValues(alpha: .5),
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          height: 70,
+                          width: double.infinity,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                cDiscover.getListDestination[index].name!,
+                                style: TextStyleHelper.getTextStyle(
+                                        context, 'rMedium16')!
+                                    .copyWith(color: AppColors.whiteColor),
+                              ),
+                              Row(
+                                spacing: 3,
+                                children: [
+                                  Icon(Icons.location_on_outlined, size: 15),
+                                  Text(
+                                    cDiscover
+                                        .getListDestination[index].location!,
+                                    style: TextStyleHelper.getTextStyle(
+                                        context, 'rRegular10'),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
-        ),
+              );
+            },
+          );
+        }),
       ),
     );
   }
 
-  StatelessWidget cardContent(BuildContext context, CDiscover cDiscover) {
+  Widget cardContent(BuildContext context, CDiscover cDiscover) {
     int cardLength = cDiscover.getListCards.length;
     return cardLength == 0
         ? Text(

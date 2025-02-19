@@ -7,6 +7,12 @@ class CFavorite extends GetxController {
   final isAscending = true.obs;
   final favoriteList = <FavoriteModel>[].obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    getDataFavorite();
+  }
+
   getDataFavorite() async {
     final data = await FavoriteService.fetchFavorite();
     favoriteList.value = data;

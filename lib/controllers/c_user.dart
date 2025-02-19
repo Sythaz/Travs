@@ -6,6 +6,12 @@ class CUser extends GetxController {
   var isLoading = false.obs;
   final user = UserModel().obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    getDataUser();
+  }
+
   login() async {
     try {
       isLoading.value = true;
