@@ -194,8 +194,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                   Text(
                     arguments.location!,
-                    style: TextStyleHelper.getTextStyle(
-                        context, 'rMedium16Location'),
+                    style: TextStyleHelper.getTextStyle(context, 'rMedium16')!
+                        .copyWith(color: AppColors.lightGreyColor),
                   ),
                 ],
               )

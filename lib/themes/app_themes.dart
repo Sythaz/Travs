@@ -20,13 +20,10 @@ class AppTheme {
       displaySmall: AppTextStyleDark.mBold18,
       headlineLarge: AppTextStyleDark.rBold24,
       titleLarge: AppTextStyleDark.rMedium20,
-      titleMedium: AppTextStyleDark.rMedium16Location,
-      bodyLarge: AppTextStyleDark.rMedium16Degrees,
+      titleMedium: AppTextStyleDark.rMedium16,
+      labelLarge: AppTextStyleDark.rMedium14,
       bodyMedium: AppTextStyleDark.rRegular14,
       bodySmall: AppTextStyleDark.rRegular10,
-      labelLarge: AppTextStyleDark.rMedium14Category,
-      labelSmall: AppTextStyleDark.rMedium14Sort,
-      titleSmall: AppTextStyleDark.rMedium16Name,
     ),
   );
 
@@ -46,13 +43,10 @@ class AppTheme {
       displaySmall: AppTextStyleLight.mBold18,
       headlineLarge: AppTextStyleLight.rBold24,
       titleLarge: AppTextStyleLight.rMedium20,
-      titleMedium: AppTextStyleLight.rMedium16Location,
-      bodyLarge: AppTextStyleLight.rMedium16Degrees,
+      titleMedium: AppTextStyleLight.rMedium16,
+      labelLarge: AppTextStyleDark.rMedium14,
       bodyMedium: AppTextStyleLight.rRegular14,
       bodySmall: AppTextStyleLight.rRegular10,
-      labelLarge: AppTextStyleLight.rMedium14Category,
-      labelSmall: AppTextStyleLight.rMedium14Sort,
-      titleSmall: AppTextStyleLight.rMedium16Name,
     ),
   );
 }
@@ -68,18 +62,11 @@ class AppTextStyleLight {
       AppFonts.robotoBold24.copyWith(color: AppColors.primaryColor1);
   static TextStyle rMedium20 =
       AppFonts.robotoMedium20.copyWith(color: AppColors.primaryColor2);
-  static TextStyle rMedium16Location =
-      AppFonts.robotoMedium16.copyWith(color: AppColors.lightGreyColor);
-  static TextStyle rMedium16Name =
-      AppFonts.robotoMedium16.copyWith(color: AppColors.whiteColor);
+  static TextStyle rMedium16 = AppFonts.robotoMedium16;
+  static TextStyle rMedium14 =
+      AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor2);
   static TextStyle rRegular14 =
       AppFonts.robotoRegular14.copyWith(color: AppColors.lightGreyColor);
-  static TextStyle rMedium16Degrees =
-      AppFonts.robotoMedium16.copyWith(color: AppColors.primaryColor1);
-  static TextStyle rMedium14Category =
-      AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor2);
-  static TextStyle rMedium14Sort =
-      AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor1);
   static TextStyle rRegular10 =
       AppFonts.robotoRegular10.copyWith(color: AppColors.lightGreyColor);
 }
@@ -95,18 +82,11 @@ class AppTextStyleDark {
       AppFonts.robotoBold24.copyWith(color: AppColors.primaryColor2);
   static TextStyle rMedium20 =
       AppFonts.robotoMedium20.copyWith(color: AppColors.primaryColor1);
-  static TextStyle rMedium16Location =
-      AppFonts.robotoMedium16.copyWith(color: AppColors.lightGreyColor);
-  static TextStyle rMedium16Name =
-      AppFonts.robotoMedium16.copyWith(color: AppColors.whiteColor);
-  static TextStyle rMedium16Degrees =
-      AppFonts.robotoMedium16.copyWith(color: AppColors.primaryColor2);
+  static TextStyle rMedium16 = AppFonts.robotoMedium16;
+  static TextStyle rMedium14 =
+      AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor1);
   static TextStyle rRegular14 =
       AppFonts.robotoRegular14.copyWith(color: AppColors.lightGreyColor);
-  static TextStyle rMedium14Category =
-      AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor1);
-  static TextStyle rMedium14Sort =
-      AppFonts.robotoMedium14.copyWith(color: AppColors.primaryColor2);
   static TextStyle rRegular10 =
       AppFonts.robotoRegular10.copyWith(color: AppColors.lightGreyColor);
 }

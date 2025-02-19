@@ -87,7 +87,8 @@ class Cards extends StatelessWidget {
                             Text(
                               data!.name!,
                               style: TextStyleHelper.getTextStyle(
-                                  context, 'rMedium16Name'),
+                                      context, 'rMedium16')!
+                                  .copyWith(color: AppColors.whiteColor),
                             ),
                             Row(
                               spacing: 5,

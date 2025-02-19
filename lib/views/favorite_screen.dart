@@ -55,14 +55,19 @@ class FavoriteScreen extends StatelessWidget {
                     if (cFavorite.isAscending.value) {
                       return Text(
                         'Sort by A-Z',
-                        style: TextStyleHelper.getTextStyle(
-                            context, 'rMedium14Sort'),
+                        style:
+                            TextStyleHelper.getTextStyle(context, 'rMedium14')!
+                                .copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                       );
                     }
                     return Text(
                       'Sort by Z-A',
-                      style: TextStyleHelper.getTextStyle(
-                          context, 'rMedium14Sort'),
+                      style: TextStyleHelper.getTextStyle(context, 'rMedium14')!
+                          .copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     );
                   },
                 ),
@@ -141,7 +146,10 @@ class FavoriteScreen extends StatelessWidget {
                               Text(
                                 favoriteItem.name!,
                                 style: TextStyleHelper.getTextStyle(
-                                    context, 'rMedium16Name'),
+                                        context, 'rMedium16')!
+                                    .copyWith(
+                                  color: AppColors.whiteColor,
+                                ),
                               ),
                               Row(
                                 spacing: 3,

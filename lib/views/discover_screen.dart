@@ -355,13 +355,16 @@ class DiscoverScreen extends StatelessWidget {
                               cDiscover.categories[index],
                               style: TextStyleHelper.getTextStyle(
                                 context,
-                                'rMedium14Category',
+                                'rMedium14',
+                              )!
+                                  .copyWith(
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
                             )
                           : Text(
                               cDiscover.categories[index],
                               style: TextStyleHelper.getTextStyle(
-                                      context, 'rMedium14Category')!
+                                      context, 'rMedium14')!
                                   .copyWith(
                                 color: AppColors.lightGreyColor,
                               ),
@@ -406,13 +409,19 @@ class DiscoverScreen extends StatelessWidget {
                         return Text(
                           'Sort by A-Z',
                           style: TextStyleHelper.getTextStyle(
-                              context, 'rMedium14Sort'),
+                                  context, 'rMedium14')!
+                              .copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                         );
                       }
                       return Text(
                         'Sort by Z-A',
-                        style: TextStyleHelper.getTextStyle(
-                            context, 'rMedium14Sort'),
+                        style:
+                            TextStyleHelper.getTextStyle(context, 'rMedium14')!
+                                .copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                       );
                     },
                   ),
@@ -520,7 +529,8 @@ class DiscoverScreen extends StatelessWidget {
                             Text(
                               cDiscover.getListDestination[index].name!,
                               style: TextStyleHelper.getTextStyle(
-                                  context, 'rMedium16Name'),
+                                      context, 'rMedium16')!
+                                  .copyWith(color: AppColors.whiteColor),
                             ),
                             Row(
                               spacing: 3,
@@ -553,10 +563,8 @@ class DiscoverScreen extends StatelessWidget {
         ? Text(
             "Oops! We couldn't find any matches.\nLet's try another search.",
             textAlign: TextAlign.center,
-            style: TextStyleHelper.getTextStyle(
-              context,
-              'rMedium14CategoryNonActive',
-            ),
+            style: TextStyleHelper.getTextStyle(context, 'rMedium14')!
+                .copyWith(color: AppColors.lightGreyColor),
           )
         : Container(
             key: UniqueKey(),

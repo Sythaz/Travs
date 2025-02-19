@@ -15,20 +15,14 @@ class TextStyleHelper {
         return textTheme.headlineLarge;
       case 'rMedium20':
         return textTheme.titleLarge;
-      case 'rMedium16Location':
-        return textTheme.titleMedium;
-      case 'rMedium16Name':
-        return textTheme.titleSmall;
       case 'rMedium16':
-        return textTheme.bodyLarge;
+        return textTheme.titleMedium;
       case 'rRegular14':
         return textTheme.bodyMedium;
       case 'rRegular10':
         return textTheme.bodySmall;
-      case 'rMedium14Category':
+      case 'rMedium14':
         return textTheme.labelLarge;
-      case 'rMedium14Sort':
-        return textTheme.labelSmall;
     }
     return null;
   }
