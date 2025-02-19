@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -24,74 +23,72 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeSwitchingArea(
-      child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.surface,
-        appBar: appBarCustom(context, cHome),
-        bottomNavigationBar: customBottomNavigation(
-          context,
-          Theme.of(context).colorScheme.surface,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                onPressed: () {
-                  cHome.setIndexPage = 0;
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: appBarCustom(context, cHome),
+      bottomNavigationBar: customBottomNavigation(
+        context,
+        Theme.of(context).colorScheme.surface,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              onPressed: () {
+                cHome.setIndexPage = 0;
+              },
+              icon: Obx(
+                () {
+                  if (cHome.getIndexPage == 0) {
+                    return SvgPicture.asset(AppAssets.homeIcon,
+                        width: 24,
+                        colorFilter: ColorFilter.mode(
+                            Theme.of(context).colorScheme.primary,
+                            BlendMode.srcIn));
+                  }
+                  return SvgPicture.asset(
+                    AppAssets.homeOutlinedIcon,
+                    width: 24,
+                  );
                 },
-                icon: Obx(
-                  () {
-                    if (cHome.getIndexPage == 0) {
-                      return SvgPicture.asset(AppAssets.homeIcon,
-                          width: 24,
-                          colorFilter: ColorFilter.mode(
-                              Theme.of(context).colorScheme.primary,
-                              BlendMode.srcIn));
-                    }
-                    return SvgPicture.asset(
-                      AppAssets.homeOutlinedIcon,
-                      width: 24,
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications_none_rounded, size: 32),
+            ),
+            IconButton(
+              onPressed: () {
+                cHome.setIndexPage = 2;
+              },
+              icon: Obx(
+                () {
+                  if (cHome.getIndexPage == 2) {
+                    return Icon(
+                      Icons.bookmark_rounded,
+                      size: 32,
+                      color: Theme.of(context).colorScheme.primary,
                     );
-                  },
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.notifications_none_rounded, size: 32),
-              ),
-              IconButton(
-                onPressed: () {
-                  cHome.setIndexPage = 2;
+                  }
+                  return Icon(Icons.bookmark_border_rounded, size: 32);
                 },
-                icon: Obx(
-                  () {
-                    if (cHome.getIndexPage == 2) {
-                      return Icon(
-                        Icons.bookmark_rounded,
-                        size: 32,
-                        color: Theme.of(context).colorScheme.primary,
-                      );
-                    }
-                    return Icon(Icons.bookmark_border_rounded, size: 32);
-                  },
-                ),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.person_outline_rounded, size: 32),
-              ),
-            ],
-          ),
-          cDiscover.isDarkMode.value,
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.person_outline_rounded, size: 32),
+            ),
+          ],
         ),
-        body: Obx(
-          () {
-            if (cHome.getIndexPage == 2) {
-              return FavoriteScreen();
-            } else {
-              return DiscoverScreen();
-            }
-          },
-        ),
+        cDiscover.isDarkMode.value,
+      ),
+      body: Obx(
+        () {
+          if (cHome.getIndexPage == 2) {
+            return FavoriteScreen();
+          } else {
+            return DiscoverScreen();
+          }
+        },
       ),
     );
   }

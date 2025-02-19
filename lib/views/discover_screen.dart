@@ -1,5 +1,4 @@
 import 'package:animated_hint_textfield/animated_hint_textfield.dart';
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -23,33 +22,31 @@ class DiscoverScreen extends StatelessWidget {
     final cFavorite = Get.put(CFavorite());
     final searchController = TextEditingController();
 
-    return ThemeSwitchingArea(
-      child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.surface,
-        body: Obx(
-          () {
-            if (cDiscover.isLoading.value || cUser.isLoading.value) {
-              return shimmerWidget();
-            }
-            return Column(
-              spacing: 10,
-              children: [
-                header(context, cUser, cDiscover),
-                searchField(context, searchController, cDiscover),
-                category(cDiscover),
-                sortAndGrid(context, cDiscover),
-                Obx(
-                  () {
-                    if (cDiscover.isGrid.value) {
-                      return gridContent(context, cDiscover, cFavorite);
-                    }
-                    return cardContent(context, cDiscover);
-                  },
-                ),
-              ],
-            );
-          },
-        ),
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: Obx(
+        () {
+          if (cDiscover.isLoading.value || cUser.isLoading.value) {
+            return shimmerWidget();
+          }
+          return Column(
+            spacing: 10,
+            children: [
+              header(context, cUser, cDiscover),
+              searchField(context, searchController, cDiscover),
+              category(cDiscover),
+              sortAndGrid(context, cDiscover),
+              Obx(
+                () {
+                  if (cDiscover.isGrid.value) {
+                    return gridContent(context, cDiscover, cFavorite);
+                  }
+                  return cardContent(context, cDiscover);
+                },
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -242,32 +239,28 @@ class DiscoverScreen extends StatelessWidget {
               )
             ],
           ),
-          ThemeSwitcher(
-            builder: (context) {
-              return InkWell(
-                onTap: () {
-                  cDiscover.switchTheme(context);
-                },
-                borderRadius: BorderRadius.circular(15),
-                child: Obx(
-                  () {
-                    return SvgPicture.asset(
-                      cDiscover.isDarkMode.value
-                          ? AppAssets.lightModeIcon
-                          : AppAssets.darkModeIcon,
-                      width: 32,
-                      colorFilter: ColorFilter.mode(
-                        cDiscover.isDarkMode.value
-                            ? AppColors.primaryColor2
-                            : AppColors.primaryColor1,
-                        BlendMode.srcIn,
-                      ),
-                    );
-                  },
-                ),
-              );
+          InkWell(
+            onTap: () {
+              cDiscover.switchTheme(context);
             },
-          )
+            borderRadius: BorderRadius.circular(15),
+            child: Obx(
+              () {
+                return SvgPicture.asset(
+                  cDiscover.isDarkMode.value
+                      ? AppAssets.lightModeIcon
+                      : AppAssets.darkModeIcon,
+                  width: 32,
+                  colorFilter: ColorFilter.mode(
+                    cDiscover.isDarkMode.value
+                        ? AppColors.primaryColor2
+                        : AppColors.primaryColor1,
+                    BlendMode.srcIn,
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );

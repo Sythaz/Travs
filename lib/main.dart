@@ -1,6 +1,3 @@
-import 'dart:ui';
-
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
@@ -16,10 +13,10 @@ Future<void> main() async {
 
   await dotenv.load(fileName: ".env");
 
-  final isPlatformDark =
-      PlatformDispatcher.instance.platformBrightness == Brightness.dark;
+  // final isPlatformDark =
+  //     PlatformDispatcher.instance.platformBrightness == Brightness.dark;
 
-  final initTheme = isPlatformDark ? AppTheme.darkTheme : AppTheme.lightTheme;
+  // final initTheme = isPlatformDark ? AppTheme.darkTheme : AppTheme.lightTheme;
 
   await Supabase.initialize(
     url: '${dotenv.env['SUPABASE_URL']}',
@@ -30,25 +27,20 @@ Future<void> main() async {
   cUser.login();
 
   runApp(
-    ThemeProvider(
-      initTheme: initTheme,
-      builder: (context, themeKu) {
-        return MainApp(themeKu);
-      },
-    ),
+    MainApp(),
   );
 }
 
 class MainApp extends StatelessWidget {
-  final ThemeData themeKu;
-
-  const MainApp(this.themeKu, {super.key});
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: themeKu,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.light,
       home: Builder(
         builder: (context) {
           return OnBoardingScreen();

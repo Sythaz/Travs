@@ -1,10 +1,8 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travs/models/destination.dart';
 
 import '../services/destination_service.dart';
-import '../themes/app_themes.dart';
 import '../views/widgets/cards.dart';
 
 class CDiscover extends GetxController {
@@ -52,11 +50,12 @@ class CDiscover extends GetxController {
 
   switchTheme(BuildContext context) {
     isDarkMode.value = !isDarkMode.value;
-    final newTheme =
-        isDarkMode.value ? AppTheme.darkTheme : AppTheme.lightTheme;
-    ThemeSwitcher.of(context).changeTheme(
-      theme: newTheme,
-    );
+    Get.changeThemeMode(isDarkMode.value ? ThemeMode.dark : ThemeMode.light);
+    // final newTheme =
+    //     isDarkMode.value ? AppTheme.darkTheme : AppTheme.lightTheme;
+    // ThemeSwitcher.of(context).changeTheme(
+    //   theme: newTheme,
+    // );
   }
 
   void updateCards() {
