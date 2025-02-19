@@ -25,7 +25,7 @@ class DiscoverScreen extends StatelessWidget {
 
     return ThemeSwitchingArea(
       child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.secondary,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: Obx(
           () {
             if (cDiscover.isLoading.value || cUser.isLoading.value) {

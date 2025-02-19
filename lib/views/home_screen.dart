@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemeSwitchingArea(
       child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.secondary,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         appBar: appBarCustom(context, cHome),
         bottomNavigationBar: customBottomNavigation(
           context,
@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
 
   AppBar appBarCustom(BuildContext context, CHome cHome) {
     return AppBar(
-      backgroundColor: Theme.of(context).colorScheme.secondary,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       surfaceTintColor: Colors.transparent,
       automaticallyImplyLeading: false,
       leading: Obx(
