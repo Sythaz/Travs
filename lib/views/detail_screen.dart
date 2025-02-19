@@ -7,6 +7,7 @@ import 'package:travs/models/destination.dart';
 import 'package:travs/themes/text_style_helper.dart';
 import 'package:travs/views/widgets/custom_bottom_navigation.dart';
 
+import '../controllers/c_discover.dart';
 import '../controllers/c_favorite.dart';
 import '../controllers/c_weather.dart';
 import '../routes/app_route.dart';
@@ -24,6 +25,7 @@ class _DetailScreenState extends State<DetailScreen> {
   final cDetailScreen = Get.put(CDetailScreen());
   final cFavorite = Get.put(CFavorite());
   final cWeather = Get.put(CWeather());
+  final cDiscover = Get.put(CDiscover());
 
   @override
   void initState() {
@@ -35,6 +37,7 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       bottomNavigationBar: customBottomNavigation(
         context,
         Theme.of(context).colorScheme.error,
@@ -89,6 +92,7 @@ class _DetailScreenState extends State<DetailScreen> {
             },
           ),
         ),
+        cDiscover.isDarkMode.value,
       ),
       body: Stack(
         fit: StackFit.expand,

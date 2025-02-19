@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return ThemeSwitchingArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         appBar: appBarCustom(context, cHome),
         bottomNavigationBar: customBottomNavigation(
           context,
@@ -95,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
+          cDiscover.isDarkMode.value,
         ),
         body: Obx(
           () {
@@ -111,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar appBarCustom(BuildContext context, CHome cHome) {
     return AppBar(
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       surfaceTintColor: Colors.transparent,
       automaticallyImplyLeading: false,
       leading: Obx(

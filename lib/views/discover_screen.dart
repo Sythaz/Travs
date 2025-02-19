@@ -24,30 +24,33 @@ class DiscoverScreen extends StatelessWidget {
     final searchController = TextEditingController();
 
     return ThemeSwitchingArea(
-      child: Scaffold(body: Obx(
-        () {
-          if (cDiscover.isLoading.value || cUser.isLoading.value) {
-            return shimmerWidget();
-          }
-          return Column(
-            spacing: 10,
-            children: [
-              header(context, cUser, cDiscover),
-              searchField(context, searchController, cDiscover),
-              category(cDiscover),
-              sortAndGrid(context, cDiscover),
-              Obx(
-                () {
-                  if (cDiscover.isGrid.value) {
-                    return gridContent(cDiscover, cFavorite);
-                  }
-                  return cardContent(context, cDiscover);
-                },
-              ),
-            ],
-          );
-        },
-      )),
+      child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        body: Obx(
+          () {
+            if (cDiscover.isLoading.value || cUser.isLoading.value) {
+              return shimmerWidget();
+            }
+            return Column(
+              spacing: 10,
+              children: [
+                header(context, cUser, cDiscover),
+                searchField(context, searchController, cDiscover),
+                category(cDiscover),
+                sortAndGrid(context, cDiscover),
+                Obx(
+                  () {
+                    if (cDiscover.isGrid.value) {
+                      return gridContent(cDiscover, cFavorite);
+                    }
+                    return cardContent(context, cDiscover);
+                  },
+                ),
+              ],
+            );
+          },
+        ),
+      ),
     );
   }
 
