@@ -29,22 +29,24 @@ class DiscoverScreen extends StatelessWidget {
           if (cDiscover.isLoading.value || cUser.isLoading.value) {
             return shimmerWidget();
           }
-          return Column(
-            spacing: 10,
-            children: [
-              header(context, cUser, cDiscover),
-              searchField(context, searchController, cDiscover),
-              category(cDiscover),
-              sortAndGrid(context, cDiscover),
-              Obx(
-                () {
-                  if (cDiscover.isGrid.value) {
-                    return gridContent(context, cDiscover, cFavorite);
-                  }
-                  return cardContent(context, cDiscover);
-                },
-              ),
-            ],
+          return SingleChildScrollView(
+            child: Column(
+              spacing: 10,
+              children: [
+                header(context, cUser, cDiscover),
+                searchField(context, searchController, cDiscover),
+                category(cDiscover),
+                sortAndGrid(context, cDiscover),
+                Obx(
+                  () {
+                    if (cDiscover.isGrid.value) {
+                      return gridContent(context, cDiscover, cFavorite);
+                    }
+                    return cardContent(context, cDiscover);
+                  },
+                ),
+              ],
+            ),
           );
         },
       ),
@@ -185,35 +187,37 @@ class DiscoverScreen extends StatelessWidget {
           ),
 
           // Card Shimmer
-          Stack(
-            children: [
-              Shimmer.fromColors(
-                baseColor: Colors.grey[300]!,
-                highlightColor: Colors.grey[100]!,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white,
+          Expanded(
+            child: Stack(
+              children: [
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[300]!,
+                  highlightColor: Colors.grey[100]!,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white,
+                    ),
+                    margin: EdgeInsets.only(top: 20, left: 60, right: 60),
+                    height: 480,
+                    width: double.infinity,
                   ),
-                  margin: EdgeInsets.only(top: 20, left: 60, right: 60),
-                  height: 480,
-                  width: double.infinity,
                 ),
-              ),
-              Shimmer.fromColors(
-                baseColor: Colors.grey[300]!,
-                highlightColor: Colors.grey[100]!,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white,
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[300]!,
+                  highlightColor: Colors.grey[100]!,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white,
+                    ),
+                    margin: EdgeInsets.symmetric(horizontal: 40),
+                    height: 480,
+                    width: double.infinity,
                   ),
-                  margin: EdgeInsets.symmetric(horizontal: 40),
-                  height: 480,
-                  width: double.infinity,
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
@@ -272,44 +276,37 @@ class DiscoverScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Stack(
         children: [
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(13),
-              border: Border.all(color: AppColors.iconColor),
-            ),
-            child: AnimatedTextField(
-              controller: searchController,
-              onChanged: (value) {
-                cDiscover.searchDestination(value);
-              },
-              animationType: Animationtype.slide,
-              animationDuration: Duration(milliseconds: 1500),
-              decoration: InputDecoration(
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SvgPicture.asset(
-                    AppAssets.searchIcon,
-                  ),
+          AnimatedTextField(
+            controller: searchController,
+            onChanged: (value) {
+              cDiscover.searchDestination(value);
+            },
+            animationType: Animationtype.slide,
+            animationDuration: Duration(milliseconds: 1500),
+            decoration: InputDecoration(
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SvgPicture.asset(
+                  AppAssets.searchIcon,
                 ),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: AppColors.iconColor,
-                  ),
-                  borderRadius: BorderRadius.circular(13),
-                ),
-                contentPadding: EdgeInsets.all(12),
               ),
-              hintTexts: cDiscover.categories
-                  .where((category) => category != 'All Place')
-                  .map((category) => 'Search destinations across $category!')
-                  .toList(),
-              hintTextStyle:
-                  TextStyleHelper.getTextStyle(context, 'rRegular14'),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(13),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(13),
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.primary,
+                  width: 2,
+                ),
+              ),
+              contentPadding: EdgeInsets.all(12),
             ),
+            hintTexts: cDiscover.categories
+                .where((category) => category != 'All Place')
+                .map((category) => 'Search destinations across $category!')
+                .toList(),
+            hintTextStyle: TextStyleHelper.getTextStyle(context, 'rRegular14'),
           ),
         ],
       ),
@@ -574,21 +571,24 @@ class DiscoverScreen extends StatelessWidget {
             style: TextStyleHelper.getTextStyle(context, 'rMedium14')!
                 .copyWith(color: AppColors.lightGreyColor),
           )
-        : Container(
-            key: UniqueKey(),
-            padding: EdgeInsets.symmetric(horizontal: 12),
-            height: 480,
-            width: double.infinity,
-            child: CardSwiper(
-              numberOfCardsDisplayed: cardLength == 1 ? 1 : 2,
-              threshold: 70,
-              cardsCount: cardLength,
-              isDisabled:
-                  cDiscover.getListDestination.length == 1 || cardLength == 1,
-              padding: const EdgeInsets.symmetric(horizontal: 32),
-              cardBuilder: (context, index, horizontalOffsetPercentage,
-                      verticalOffsetPercentage) =>
-                  cDiscover.getListCards[index],
+        : Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: Container(
+              key: UniqueKey(),
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              height: 480 - kBottomNavigationBarHeight,
+              width: double.infinity,
+              child: CardSwiper(
+                numberOfCardsDisplayed: cardLength == 1 ? 1 : 2,
+                threshold: 70,
+                cardsCount: cardLength,
+                isDisabled:
+                    cDiscover.getListDestination.length == 1 || cardLength == 1,
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                cardBuilder: (context, index, horizontalOffsetPercentage,
+                        verticalOffsetPercentage) =>
+                    cDiscover.getListCards[index],
+              ),
             ),
           );
   }

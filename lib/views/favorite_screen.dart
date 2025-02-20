@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:travs/controllers/c_discover.dart';
 import 'package:travs/controllers/c_favorite.dart';
 
@@ -28,49 +29,87 @@ class FavoriteScreen extends StatelessWidget {
     );
   }
 
-  Row sortAndGrid(BuildContext context, CFavorite cFavorite) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(
-          child: InkWell(
-            borderRadius: BorderRadius.circular(15),
-            onTap: () {
-              cFavorite.sortDestination();
-            },
-            child: Row(
-              spacing: 5,
-              children: [
-                SvgPicture.asset(
-                  AppAssets.sortIcon,
-                  height: 24,
-                  colorFilter: ColorFilter.mode(
-                    Theme.of(context).colorScheme.primary,
-                    BlendMode.srcIn,
+  Obx sortAndGrid(BuildContext context, CFavorite cFavorite) {
+    return Obx(() {
+      if (cDiscover.isLoading.value || cFavorite.isLoading.value) {
+        shimmerWidget();
+      }
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            child: InkWell(
+              borderRadius: BorderRadius.circular(15),
+              onTap: () {
+                cFavorite.sortDestination();
+              },
+              child: Row(
+                spacing: 5,
+                children: [
+                  SvgPicture.asset(
+                    AppAssets.sortIcon,
+                    height: 24,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.primary,
+                      BlendMode.srcIn,
+                    ),
                   ),
-                ),
-                Obx(
-                  () {
-                    if (cFavorite.isAscending.value) {
+                  Obx(
+                    () {
+                      if (cFavorite.isAscending.value) {
+                        return Text(
+                          'Sort by A-Z',
+                          style: TextStyleHelper.getTextStyle(
+                                  context, 'rMedium14')!
+                              .copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        );
+                      }
                       return Text(
-                        'Sort by A-Z',
+                        'Sort by Z-A',
                         style:
                             TextStyleHelper.getTextStyle(context, 'rMedium14')!
                                 .copyWith(
                           color: Theme.of(context).colorScheme.primary,
                         ),
                       );
-                    }
-                    return Text(
-                      'Sort by Z-A',
-                      style: TextStyleHelper.getTextStyle(context, 'rMedium14')!
-                          .copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    );
-                  },
-                ),
-              ],
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      );
+    });
+  }
+
+  Row shimmerWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Shimmer.fromColors(
+          baseColor: Colors.grey[300]!,
+          highlightColor: Colors.grey[100]!,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.white,
+            ),
+            width: 150,
+            height: 24,
+          ),
+        ),
+        Shimmer.fromColors(
+          baseColor: Colors.grey[300]!,
+          highlightColor: Colors.grey[100]!,
+          child: Container(
+            width: 38,
+            height: 38,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.white,
             ),
           ),
         ),

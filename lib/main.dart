@@ -9,14 +9,8 @@ import 'themes/app_themes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // debugPaintSizeEnabled = true;
 
   await dotenv.load(fileName: ".env");
-
-  // final isPlatformDark =
-  //     PlatformDispatcher.instance.platformBrightness == Brightness.dark;
-
-  // final initTheme = isPlatformDark ? AppTheme.darkTheme : AppTheme.lightTheme;
 
   await Supabase.initialize(
     url: '${dotenv.env['SUPABASE_URL']}',

@@ -32,6 +32,7 @@ class CDiscover extends GetxController {
   getDataDestination() async {
     try {
       isLoading.value = true;
+      await Future.delayed(Duration(seconds: 1));
 
       _listDestination.value = await DestinationService.fetchDestinations();
 
